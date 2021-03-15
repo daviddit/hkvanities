@@ -1,0 +1,10 @@
+[
+  {
+    "text": "poem 1",
+    "video": "static/poems/1.mp4"
+  },
+  {
+    "text": "poem 2",
+    "video": "static/poems/2.mp4"
+  }
+]
