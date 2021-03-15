@@ -1,9 +1,6 @@
 import React from 'react'
 import Follow from '../components/follow'
 
+const FollowPage = props => ( <Follow /> )
 
-const Follow = props => (
-	<Follow />
-)
-
-export default Follow
+export default FollowPage
