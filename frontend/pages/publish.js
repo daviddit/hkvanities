@@ -2,7 +2,7 @@ import React from 'react'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import styled from 'styled-components'
-
+import { hostname } from '../config.js'
 import Selection from '../components/selection'
 import PublishControls from '../components/publish-controls'
 import Plates from '../components/plates'
@@ -14,6 +14,7 @@ const Publish = props => {
   const [loading, setLoading] = React.useState(true)
   const [error, setError] = React.useState(null)
   const [url, setUrl] = React.useState(null)
+  const [video, setVideo] = React.useState(null)
   const [thumb, setThumb] = React.useState(null)
   const plates = (router.query.plates || '').split(',')
 
@@ -40,9 +41,11 @@ const generatePoem = async (plates) => {
     }
     generatePoem(plates).then(
       (poem) => {
+//	      console.log(poem)
         setLoading(false)
-        setUrl(poem.url)
+        setUrl(hostname + poem.slug)
         setThumb(poem.thumb)
+        setVideo(poem.video)
       },
       (err) => {
         console.error(err)
@@ -50,7 +53,10 @@ const generatePoem = async (plates) => {
         setLoading(false)
       },
     )
-  }, [router.query.plates])
+
+	console.log("share1",url,video,thumb)
+  }, [])
+  //}, [router.query.plates])
 
 
   const handleMouseEnter = () => {}
@@ -67,10 +73,10 @@ const generatePoem = async (plates) => {
       {loading && (
         'Loading...'
       )}
-      {url && ( <Poem poem={{ text: plates.join(' | '), video: url, thumb: thumb }} autoPlay handleMouseEnter={handleMouseEnter} handleMouseOut={handleMouseOut} />)}
+      { video && ( <Poem poem={{ text: 'Your poem', url: video, thumb: thumb }} autoPlay handleMouseEnter={handleMouseEnter} handleMouseOut={handleMouseOut} />)}
     </PoemContainer>
     <ButtonsContainer>
-	  { url && <PublishControls controls="false" autoPlay="true" video={url} thumb={thumb} /> }
+	  { url && <PublishControls controls="false" autoPlay="true" url={url} video={video} thumb={thumb} /> }
     </ButtonsContainer>
   </>
   )

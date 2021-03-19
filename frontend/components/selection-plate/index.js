@@ -64,10 +64,11 @@ const SelctionPlate = ({ index, plate, onMove, onRemove }) => {
   }
 
 
+     // <StyledDeletePlate src={plate.thumbnail} alt={plate.text} over={over} onClick={onDelete.bind(this,index)}><Cancel style={{fontSize: '4rem', fill: 'black' }}/></StyledDeletePlate>
 
   return (
-    <StyledSelectionPlate innerRef={ref} data-handler-id={handlerId} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
-      <StyledDeletePlate src={plate.thumbnail} alt={plate.text} over={over} onClick={onDelete.bind(this,index)}><Cancel style={{fontSize: '4rem', fill: 'black' }}/></StyledDeletePlate>
+    <StyledSelectionPlate innerRef={ref} data-handler-id={handlerId} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}  onContextMenu={(e) => e.preventDefault()}>
+      <StyledDeletePlate src={plate.thumbnail} alt={plate.text} over={over} onClick={onDelete.bind(this,index)}><img src="/static/img/delete.svg"/></StyledDeletePlate>
       <StyledSelectionImage src={plate.thumbnail} alt={plate.text}/>
         <StyledSelectionCaption>{plate.text}</StyledSelectionCaption>
     </StyledSelectionPlate>

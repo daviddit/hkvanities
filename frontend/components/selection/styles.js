@@ -6,11 +6,12 @@ const size = '5rem'
 export const StyledSelection = styled.section`
   margin: 2rem 0;
   overflow: auto;
-  max-height: 23vh;
-  //max-height: 30vh;
+  //max-height: 23vh;
+  max-height: calc((((100vw - 1rem) / 3) + 1rem) * 2 ) ;
 
     @media ${device.laptop} {
-      max-height: 38vh;
+     // max-height: 38vh;
+      max-height: calc((((100vw - 5rem) / 4) - 5rem) * 2 );
       overflow: auto;
     }
 `
@@ -93,7 +94,9 @@ export const StyledDropZone = styled.div`
     max-width: 15rem;
     max-height: 15rem;
   //background: ${props => props.active ? 'hsl(46, 100%, 50%)' : 'transparent'};
-  background: lightgrey;
+  //background: lightgrey;
+  background: url('/static/img/drop.svg') center;
+  background-size: 100%;
   display: flex;
   text-align: center;
   position: relative;
@@ -142,7 +145,9 @@ export const StyledDropZone = styled.div`
 
 `
 
+/*
 export const StyledDropZoneInner = styled.div`
+ border: 2px solid pink;
  position: absolute;
  top: 50%;
  left: 50%;
@@ -154,10 +159,11 @@ export const StyledDropZoneInner = styled.div`
     font-size: 25px;
   }
 `
+*/
 
 export const StyledPlaceholderDropZone = styled.div`
   @media ${device.laptop} {
-  display: flex;
+  //display: flex;
   }
 `
 
@@ -172,7 +178,7 @@ export const StyledSelectionNote = styled.div`
   }
 
   @media ${device.laptop} {
-    font-size: 3rem;
+    font-size: 2rem;
     padding: 0;
   }
 `

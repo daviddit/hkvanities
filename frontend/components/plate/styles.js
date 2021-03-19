@@ -2,8 +2,12 @@ import styled from 'styled-components'
 import { device } from '../../lib/device'
 
 export const StyledPlate = styled.article`
-  margin: 1rem ${props => props.size == "S" ? '1.6rem' : '1.3rem'} 0 0;
+  margin: 0;
   cursor: pointer;
+
+  @media ${device.laptop} {
+  margin: 1rem ${props => props.size == "S" ? '1.6rem' : '1.3rem'} 0 0;
+  }
 `
 
 export const StyledPlateFigure = styled.figure`
@@ -75,3 +79,22 @@ export const StyledPlateText = styled.div`
    }
 `
 
+export const StyledAddPlate = styled.div`
+  padding: 0;
+  //background-color: white;
+  //border-radius: 100%;
+  top: -1.5rem;
+  right: -1.5rem;
+  opacity: ${props => props.over ? 1 : 0 };
+  position: absolute;
+  //display: ${props => props.over ? 'block' : 'none' };
+  z-index: 1505;
+  cursor: pointer;
+  transition: opacity .5s ease-in-out;
+
+
+  & img
+  {
+   width: 3rem;
+  }
+`

@@ -6,7 +6,7 @@ import Fade from '@material-ui/core/Fade';
 import FacebookIcon from '@material-ui/icons/Facebook';
 import PinterestIcon from '@material-ui/icons/Pinterest';
 import WhatsAppIcon from '@material-ui/icons/WhatsApp';
-import TelegramAppIcon from '@material-ui/icons/Telegram';
+import TelegramIcon from '@material-ui/icons/Telegram';
 import TwitterIcon from '@material-ui/icons/Twitter';
 import MailIcon from '@material-ui/icons/Mail';
 import ShareIcon from '@material-ui/icons/Share';
@@ -14,6 +14,28 @@ import Image from 'next/image';
 import { device } from '../../lib/device'
 import { Icon, InlineIcon } from '@iconify/react';
 import wechatIcon from '@iconify/icons-mdi/wechat';
+
+import {
+  EmailShareButton,
+  FacebookShareButton,
+  HatenaShareButton,
+  InstapaperShareButton,
+  LineShareButton,
+  LinkedinShareButton,
+  LivejournalShareButton,
+  MailruShareButton,
+  OKShareButton,
+  PinterestShareButton,
+  PocketShareButton,
+  RedditShareButton,
+  TelegramShareButton,
+  TumblrShareButton,
+  TwitterShareButton,
+  ViberShareButton,
+  VKShareButton,
+  WhatsappShareButton,
+  WorkplaceShareButton
+} from "react-share";
 
 
 import { StyledControls, StyledControl } from '../publish-controls/styles'
@@ -60,6 +82,10 @@ const useStyles = makeStyles((theme) => ({
    {
     position: 'relative',
     top: '2px',
+   },
+   "& > button":
+   {
+     outline: '0',
    }
   },
   shared1: {
@@ -76,11 +102,15 @@ const useStyles = makeStyles((theme) => ({
    {
     position: 'relative',
     top: '2px',
+   },
+   "& > button":
+   {
+     outline: '0',
    }
   },
 }));
 
-export default function Share({ url, thumb, onClick, text}) {
+export default function Share({ url, video, thumb, onClick, text}) {
   const classes = useStyles();
   // getModalStyle is not a pure function, we roll the style only on the first render
   const [modalStyle] = React.useState(getModalStyle);
@@ -157,26 +187,30 @@ export default function Share({ url, thumb, onClick, text}) {
 	  <Fade in={open}>
 	    <div style={modalStyle} className={classes.paper}>
 		{thumb && <Image src={thumb} width="300" height="300"  />}
+
 	      <li className={classes.shared0}>
-		<a href={urlTwitter} target="_blank"><TwitterIcon/> Twitter</a>
-	      </li>
-	      <li className={classes.shared1}>
-		<a href={urlFacebook} target="_blank"><FacebookIcon/> Facebook</a>
-	      </li >
-	      <li className={classes.shared0}>
-		<a href={urlPinterest} target="_blank"><PinterestIcon/> Pinterest</a>
-	      </li >
-	      <li className={classes.shared1}>
-		<a href={urlWhatsapp} target="_blank"><WhatsAppIcon/> Whatsapp</a>
 	      </li>
 	      <li className={classes.shared0}>
-		<a href={urlTelegram} target="_blank"><TelegramAppIcon/> Telegram</a>
+		<TwitterShareButton title={text} url={url}><TwitterIcon/> Twitter</TwitterShareButton>
+	      </li>
+	      <li className={classes.shared1}>
+		<FacebookShareButton title={text} url={url}><FacebookIcon/> Facebook</FacebookShareButton>
+	      </li >
+	      <li className={classes.shared0}>
+		<PinterestShareButton title={text} url={url}><PinterestIcon/> Pinterest</PinterestShareButton>
+	      </li >
+	      <li className={classes.shared1}>
+	       {/*<a href={urlWhatsapp} target="_blank"><WhatsAppIcon/> Whatsapp</a>*/}
+		<WhatsappShareButton title={text} url={url}><WhatsAppIcon/> Whatsapp</WhatsappShareButton>
+	      </li>
+	      <li className={classes.shared0}>
+		<TelegramShareButton title={text} url={url}><TelegramIcon/> Telegram</TelegramShareButton>
 	      </li>
 	      <li className={classes.shared1}>
 		<a href={urlWeChat} target="_blank"><Icon icon={wechatIcon} /> WeChat</a>
 	      </li>
 	      <li className={classes.shared0}>
-		<a href={urlMail} target="_blank"><MailIcon/> Mail</a>
+		<EmailShareButton title={text} url={url}><MailIcon/> E-mail</EmailShareButton>
 	      </li>
 	  {/*
 		  <li className={classes.shared1}>

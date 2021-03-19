@@ -8,7 +8,7 @@ import SelectionControls from '../selection-controls'
 import ImageControls from '../image-controls'
 import { useDrop } from 'react-dnd'
 import { v4 as uuid } from 'uuid'
-import AddCircleOutlineIcon from '@material-ui/icons/AddCircleOutline';
+//import AddCircleOutlineIcon from '@material-ui/icons/AddCircleOutline';
 
 const Selection  = ({showText, size, handlePlateSize, handleShowText }) => {
   const router = useRouter()
@@ -24,7 +24,7 @@ const Selection  = ({showText, size, handlePlateSize, handleShowText }) => {
   const [{ canDrop }, drop] = useDrop({
     accept: 'plate',
     drop: (item) => {
-	    console.log("item",item)
+  	//scrollSmoothToBottom ('dropZone') 
       if (item.value.id) return
       setPlates([
         ...plates,
@@ -38,6 +38,23 @@ const Selection  = ({showText, size, handlePlateSize, handleShowText }) => {
       canDrop: monitor.canDrop(),
     })
   })
+
+
+
+  function scrollSmoothToBottom (id) {
+	var div = document.getElementById(id);
+	  console.log(0,div)
+	  /*
+	$('#' + id).animate({
+		scrollTop: div.scrollHeight - div.clientHeight
+	}, 500);
+	*/
+
+	  console.log(1,div.scrollTop,' = ',div.scrollHeight,' - ',div.clientHeight)
+	  console.log(2,div.scrollTop)
+          div.scrollTop = div.clientHeight;
+	  console.log(3,div.scrollTop)
+  }
 
 
   const handleReset = () => {
@@ -77,14 +94,14 @@ const Selection  = ({showText, size, handlePlateSize, handleShowText }) => {
           {plates.length ? (
             <React.Fragment>
               {plates.map((plate, i) => (
-                <SelectionPlate key={plate.id} index={i} onMove={handleMove} onRemove={handleRemove}  dropable plate={plate}/>
+                <SelectionPlate key={plate.id} index={i} onMove={handleMove} onRemove={handleRemove} dropable plate={plate}/>
               ))}
-              <StyledDropZone innerRef={drop} active={canDrop}><StyledDropZoneInner><AddCircleOutlineIcon style={{ fontSize: '3em' }}/></StyledDropZoneInner></StyledDropZone>
+              <StyledDropZone id="dropZone" innerRef={drop} active={canDrop}></StyledDropZone>
             </React.Fragment>
           ) : (
             <StyledPlaceholderDropZone innerRef={drop} active={canDrop}>
-              <StyledDropZone innerRef={drop} active={canDrop}><StyledDropZoneInner><AddCircleOutlineIcon style={{ fontSize: '3em' }}/></StyledDropZoneInner></StyledDropZone>
               <StyledSelectionNote>{'Drag the images and create your own poem, then share or save on your device.'}</StyledSelectionNote>
+              <StyledDropZone innerRef={drop} active={canDrop}></StyledDropZone>
             </StyledPlaceholderDropZone>
           )}
         </StyledSelectionPlates>
@@ -97,5 +114,9 @@ const Selection  = ({showText, size, handlePlateSize, handleShowText }) => {
     </React.Fragment>
   )
 }
+
+//<StyledDropZoneInner><AddCircleOutlineIcon style={{ fontSize: '3em' }}/></StyledDropZoneInner>
+
+              //<StyledDropZone innerRef={drop} active={canDrop}><StyledDropZoneInner><AddCircleOutlineIcon style={{ fontSize: '3em' }}/></StyledDropZoneInner></StyledDropZone>
 
 export default Selection

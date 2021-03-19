@@ -5,6 +5,7 @@ import Share from '../share'
 import axios from 'axios'
 import fileDownload from 'js-file-download'
 
+
 import { StyledControls, StyledControl } from './styles'
 
 const PublishControls = ({url, text , video , thumb, noShare, noSave, noBack}) => {
@@ -78,17 +79,22 @@ const PublishControls = ({url, text , video , thumb, noShare, noSave, noBack}) =
    }
 
 //	console.log("noShare",noShare)
+//
+//
 
+console.log("share 2",url,video,thumb)
 
 return (
   <StyledControls>
-    { video && <StyledControl onClick={() => {handleDownload(video, video.split('/').reverse()[0])}} >Download</StyledControl> }
+    { video && <StyledControl onClick={() => {handleDownload(video,'YourPoem.mp4')}} >Download</StyledControl> }
     { noShare ? '' : '' }
-    { noSave  ? (<Share text={text} url={url} thumb={thumb} />) : (<StyledControl button onClick={handleSave}>Save</StyledControl>) }
+    <Share text={text} url={url} video={video} thumb={thumb} />
     { noBack  ? '' : (<StyledControl button onClick={handleBack}>Back</StyledControl>) }
   </StyledControls>
 )
 }
+
+//{ noSave  ? (<Share text={text} url={url} thumb={thumb} />) : (<StyledControl button onClick={handleSave}>Save</StyledControl>) }
 
 PublishControls.defaultProps = {
     noSave: true,

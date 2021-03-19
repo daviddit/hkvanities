@@ -8,7 +8,7 @@ export const StyledPoem = styled.video`
   bottom: 0;
   opacity: ${props => props.autoPlay ? "1" : "0.5" };
   //${props => props.autoPlay ? null : "filter: blur(2px);" }
-  object-fit: cover;
+  //object-fit: cover;
 
   @media ${device.laptop} {
     width: calc(((100vw - 6rem) / 4) - 2rem);

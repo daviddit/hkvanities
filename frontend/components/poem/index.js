@@ -45,9 +45,13 @@ const Poem = ({ poem, controls, autoPlay }) => {
 	<meta name="twitter:card" content="summary_large_image" />
 */
 
-  const url = "https://" + 'hkvanities.dieres.com'+ poem.slug;
-  const url_img = poem.thumb ? "https://" + 'hkvanities.dieres.com'+ poem.thumb.replace('/ /g','+') : null
-  const url_video = poem.thumb ? "https://" + 'hkvanities.dieres.com'+ poem.video.replace('/ /g','+') : null
+  ////const url = "https://" + 'hkvanities.dieres.com'+ poem.slug;
+  ////const url_img = poem.thumb ? "https://" + 'hkvanities.dieres.com'+ poem.thumb.replace('/ /g','+') : null
+  //const url_video = poem.thumb ? "https://" + 'hkvanities.dieres.com'+ poem.video.replace('/ /g','+') : null
+
+  const url = poem.url;
+  const url_img = poem.thumb
+  const url_video = poem.video
 
   return (
   <StyledPoemFigure>
@@ -67,7 +71,17 @@ const Poem = ({ poem, controls, autoPlay }) => {
 	<meta property="og:player:stream" content={url_video} />
 	<meta property="twitter:card" content="summary_large_image" />
 
-    <StyledPoem controls={controls} preload={preload} autoPlay={autoplay} muted loop id={poem.text} key={poem.video} poster={poem.thumb} 
+    <StyledPoem id={poem.text}
+	  	key={poem.video}
+	  	poster={poem.thumb} 
+	  	controls={controls}
+	  	preload={preload}
+	  	autoPlay={autoplay}
+	  	muted
+	  	loop
+	  	ratio="1:1"
+	  	width="100%"
+	  	height="100%"
 	  	onMouseEnter={handleMouseEnter}
 	  	onMouseOut={handleMouseOut}
 	  >

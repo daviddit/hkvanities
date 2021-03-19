@@ -11,6 +11,7 @@ const outDir = process.env.OUT_DIR
 */
 const tmpDir = './tmp'
 const outDir = './static/out'
+const poemsDir = './static/poems'
 const platesDir = './static/plates/thumbnails'
 const plateToPath = (plate) => path.join(platesDir, `${plate}.jpg`)
 
@@ -41,10 +42,29 @@ const fn = async (req) => {
     const publicPathVideo = path.join(outDir, publicNameVideo)
     const publicPathThumb = path.join(outDir, publicNameThumb)
 
-    await fs.copyFile(outPath, publicPathVideo)
-    await fs.copyFile(thumb, publicPathThumb)
 
-    return { url: `/static/out/${publicNameVideo}`, thumb: `/static/out/${publicNameThumb}` }
+    const dir = await fs.readdir(poemsDir)
+
+
+    // get next directory number 
+    const id = parseInt(dir.sort((a,b) => (parseInt(a) > parseInt(b)) ? 1 : ((parseInt(b) > parseInt(a)) ? -1 : 0)).pop())+1
+    //console.log(id)
+	  
+    const newDir =  path.join(poemsDir,id.toString())
+
+    await fs.mkdir(newDir);
+
+    const newVideo = path.join(newDir, 'YourPoem.mp4')
+    const newThumb = path.join(newDir, 'YourPoem.jpg')
+
+    //await fs.copyFile(outPath, publicPathVideo)
+    //await fs.copyFile(thumb, publicPathThumb)
+
+    await fs.copyFile(outPath, newVideo)
+    await fs.copyFile(thumb, newThumb)
+
+    //return { url: `/static/out/${publicNameVideo}`, thumb: `/static/out/${publicNameThumb}` }
+    return { slug: '/poem/'+id, video: '/'+newVideo, thumb: '/'+newThumb }
   } finally {
     await clean()
   }
@@ -71,7 +91,7 @@ const jpgsToMp4 = async (imgs, opts) => {
 
     for (const img of imgs) {
 	  try {
-	      console.log(i , img , " => ", path.join(outDir, `${i}.jpg`))
+	      //console.log(i , img , " => ", path.join(outDir, `${i}.jpg`))
 	      fs.copyFile(img, path.join(outDir, `${i}.jpg`))
 	  } catch (err) {
 	      throw err;
@@ -98,21 +118,30 @@ const jpgsToMp4 = async (imgs, opts) => {
 //        stdio: 'inherit',
 //      }
 //    )
+	  //ffmpeg -r:v 1 -y -pattern_type glob -i "*.jpg" -r:v 30 -codec:v libx264 -preset veryslow -pix_fmt yuv420p -crf 28 -an -movflags +faststart prova8.mp4
+
     sspawn(
       "ffmpeg",
       [
-        "-r",
-        "1",
         "-y",
-        "-framerate",
-        "30",
+        "-r:v",
+        "1",
         //fps.toString(),
         "-pattern_type",
         "glob",
         "-i",
         path.join(outDir, "*.jpg"),
-        "-c:v",
+        "-r:v",
+        "30",
+        "-codec:v",
         "libx264",
+        "-preset",
+        "veryslow",
+        "-pix_fmt",
+        "yuv420p",
+        "-crf",
+        "28",
+        "-an",
         "-movflags",
         "+faststart",
         outFile,
@@ -127,7 +156,7 @@ const jpgsToMp4 = async (imgs, opts) => {
 	    let i = 1;
 	    for (const img of imgs) {
 
-	      console.log(i , " delete ", path.join(outDir, `${i}.jpg`))
+	      //console.log(i , " delete ", path.join(outDir, `${i}.jpg`))
 
 	      await fs.unlink(path.join(outDir, `${i}.jpg`));
 	      i++;

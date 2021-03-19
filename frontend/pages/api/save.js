@@ -6,7 +6,7 @@ const util = require("util");
 const uuid = require('uuid').v4
 
 const outDir = './static/out'
-const poemsDir = './static/gallery'
+const poemsDir = './static/poems'
 
 const plateToPath = (plate) => path.join(platesDir, `${plate}.jpg`)
 

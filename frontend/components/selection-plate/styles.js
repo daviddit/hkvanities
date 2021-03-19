@@ -3,7 +3,7 @@ import { device } from '../../lib/device'
 
 export const StyledSelectionPlate = styled.article`
   margin: 2rem 1rem .5rem .5rem;
-  cursor: pointer;
+  cursor: grab;
   position: relative;
 
   @media ${device.laptop} {
@@ -34,14 +34,20 @@ export const StyledSelectionCaption = styled.figcaption`
 
 export const StyledDeletePlate = styled.div`
   padding: 0;
-  background-color: white;
-  border-radius: 100%;
-  top: -2rem;
-  right: -2rem;
+  //background-color: white;
+  //border-radius: 100%;
+  top: -1.5rem;
+  right: -1.5rem;
   opacity: ${props => props.over ? 1 : 0 };
   position: absolute;
   //display: ${props => props.over ? 'block' : 'none' };
   z-index: 1505;
   cursor: pointer;
   transition: opacity .5s ease-in-out;
+
+
+  & img
+  {
+   width: 3rem;
+  }
 `
