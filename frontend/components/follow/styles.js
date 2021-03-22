@@ -15,6 +15,7 @@ export const FollowButton = styled.button`
   cursor: pointer;
   background: none;
   color: black;
+  margin: 0 1rem;
 
   @media ${device.laptop} {
     margin: 5rem 2rem 6rem 2rem;
