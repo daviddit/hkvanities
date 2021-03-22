@@ -33,18 +33,18 @@ const fn = async (req) => {
   }
   const [thumb, outPath, clean] = await jpgsToMp4(imgs)
   try {
-    //const publicName = `${plates.map((x) => x.replace(/\W/g, '-')).join('+')}.mp4`
-    const publicName = `${plates.map((x) => x.replace(/\W/g, '-')).join('+')}`
+    //const publicName = `${plates.map((x) => x.replace(/\W/g, '-')).join('+')}`
+    //console.log(0,publicName)
 
-    const publicNameVideo = publicName+".mp4"
-    const publicNameThumb = publicName+".jpg"
+    //const publicNameVideo = publicName+".mp4"
+    //const publicNameThumb = publicName+".jpg"
 
-    const publicPathVideo = path.join(outDir, publicNameVideo)
-    const publicPathThumb = path.join(outDir, publicNameThumb)
+    const publicPathVideo = path.join(outDir, "temp.mp4")
+    const publicPathThumb = path.join(outDir, "temp.jpg")
 
+    console.log(1,poemsDir)
 
     const dir = await fs.readdir(poemsDir)
-
 
     // get next directory number 
     const id = parseInt(dir.sort((a,b) => (parseInt(a) > parseInt(b)) ? 1 : ((parseInt(b) > parseInt(a)) ? -1 : 0)).pop())+1
@@ -52,19 +52,28 @@ const fn = async (req) => {
 	  
     const newDir =  path.join(poemsDir,id.toString())
 
+    console.log(4,newDir)
+
     await fs.mkdir(newDir);
+
+    console.log(5,newDir)
 
     const newVideo = path.join(newDir, 'YourPoem.mp4')
     const newThumb = path.join(newDir, 'YourPoem.jpg')
 
     //await fs.copyFile(outPath, publicPathVideo)
     //await fs.copyFile(thumb, publicPathThumb)
+	  //
+    console.log(6,newVideo)
+    console.log(7,newThumb)
 
     await fs.copyFile(outPath, newVideo)
     await fs.copyFile(thumb, newThumb)
 
+    console.log(8,"return")
+
     //return { url: `/static/out/${publicNameVideo}`, thumb: `/static/out/${publicNameThumb}` }
-    return { slug: '/poem/'+id, video: '/'+newVideo, thumb: '/'+newThumb }
+    return { id: id, slug: '/poem/'+id, video: '/'+newVideo, thumb: '/'+newThumb }
   } finally {
     await clean()
   }
@@ -120,13 +129,12 @@ const jpgsToMp4 = async (imgs, opts) => {
 //    )
 	  //ffmpeg -r:v 1 -y -pattern_type glob -i "*.jpg" -r:v 30 -codec:v libx264 -preset veryslow -pix_fmt yuv420p -crf 28 -an -movflags +faststart prova8.mp4
 
-    sspawn(
+    await sspawn(
       "ffmpeg",
       [
         "-y",
         "-r:v",
         "1",
-        //fps.toString(),
         "-pattern_type",
         "glob",
         "-i",
@@ -150,9 +158,9 @@ const jpgsToMp4 = async (imgs, opts) => {
         stdio: 'inherit',
       }
     )
+
     await sspawn("sleep", ["1"], {})
     const clean = async () => {
-
 	    let i = 1;
 	    for (const img of imgs) {
 
@@ -162,13 +170,16 @@ const jpgsToMp4 = async (imgs, opts) => {
 	      i++;
 	    }
       await fs.unlink(outFile)
+      //console.log(" delete outfile:", outFile)
       await fs.rmdir(outDir)
+      //console.log(" delete outdir:", outDir)
     }
     return [thumb, outFile, clean];
   } finally {}
 };
 
 const sspawn = (...args) => new Promise((res, rej) => {
+  //console.log('spawn:',args)
   const c = cp.spawn(...args)
   c.on('error', (err) => {
     rej(err)
