@@ -14,6 +14,7 @@ import Image from 'next/image';
 import { device } from '../../lib/device'
 import { Icon, InlineIcon } from '@iconify/react';
 import wechatIcon from '@iconify/icons-mdi/wechat';
+import { hostname } from '../../config.js'
 
 import {
   EmailShareButton,
