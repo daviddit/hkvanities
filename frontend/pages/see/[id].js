@@ -5,7 +5,6 @@ import Poem from '../../components/poem'
 import PublishControls from '../../components/publish-controls'
 import {PoemContainer , ButtonsContainer } from '../../components/poems/styles'
 import { hostname } from '../../config.js'
-//import Control from '../../components/control'
 import { ControlsContainer } from '../../components/control/styles'
 import { device } from '../../lib/device'
 
@@ -34,8 +33,6 @@ export default function SeeId({ ...props }){
 
   const handleMouseEnter = () => {}
   const handleMouseOut = () => {}
-
-  //const hostname = typeof window !== 'undefined' && window.location.hostname ? window.location.hostname : '';
 
   const url = hostname + poem.slug;
 
@@ -95,12 +92,10 @@ export const Control = styled.a`
 `
 
 
-/*
 export async function getStaticPaths() {
-import fs from 'fs'
+  const fs = require('fs').promises
 
-  const fileNames2 = fs.readdirSync("static/poems")
-  const fileNames = []
+  const fileNames = await fs.readdir("static/gallery")
 
   return {
      paths: fileNames.map(dir => {
@@ -116,8 +111,6 @@ import fs from 'fs'
 
 
 }
-*/
-
 
 const getMaxPoems = async (id) => {
 
@@ -158,6 +151,7 @@ const outDir = path.join(url,id)
    }
 }
 
+/*
 export async function getServerSideProps({ params }) {
   const poem = await fetchPoem(params.id)
   const totalPoems = await getMaxPoems()
@@ -179,18 +173,29 @@ export async function getServerSideProps({ params }) {
     }
   }
 }
+*/
 
-/*
 export async function getStaticProps({ params }) {
   const poem = await fetchPoem(params.id)
+  const totalPoems = await getMaxPoems()
+
+  if(!poem)
+  {
+	 //return { notFound: true, }
+	 return { 
+		 redirect: { 
+		   destination: '/',
+		   permanent: false,
+	         },
+	 }
+  }
 
   return {
     props: {
-      poem
+      poem, totalPoems
     }
   }
 }
-*/
 
 
 
