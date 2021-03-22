@@ -1,0 +1,15 @@
+
+div.bm-burger-button > span > span.bm-burger-bars:nth-child(1)
+{
+	 top: 30% !important;
+}
+
+div.bm-burger-button > span > span.bm-burger-bars:nth-child(2)
+{
+	 top: 50% !important;
+}
+
+div.bm-burger-button > span > span.bm-burger-bars:nth-child(3)
+{
+	 top: 70% !important;
+}
