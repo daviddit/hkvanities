@@ -9,7 +9,7 @@ export const StyledPlates = styled.section`
   margin: 2rem 0;
   background-color: ${props => props.showText && "hsl(46, 100%, 50%)" };
   padding: 1rem ;
-  justify-content: space-between;
+  justify-content: ${props => props.showText ? "flext-start" : "space-between" };
 
   @media ${device.laptop} {
   padding: 2rem ;
