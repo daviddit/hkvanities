@@ -6,12 +6,10 @@ const size = '5rem'
 export const StyledSelection = styled.section`
   margin: 2rem 0;
   overflow: auto;
-  //max-height: 23vh;
   max-height: calc((((100vw - 1rem) / 3) + 1rem) * 2 ) ;
 
     @media ${device.laptop} {
-     // max-height: 38vh;
-      max-height: calc((((100vw - 5rem) / 4) - 5rem) * 2 );
+      max-height: calc(((((100vw - 8rem) / 8)) * 2 ) + 3rem);
       overflow: auto;
     }
 `
@@ -67,7 +65,7 @@ export const StyledSelectionPlates = styled.section`
 
 
     @media ${device.laptop} {
-      max-height: 40vh;
+      //max-height: 40vh;
       overflow: auto;
     }
 

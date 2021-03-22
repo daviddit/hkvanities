@@ -6,29 +6,42 @@ import { StyledBurger } from './styles'
 var styles = {
   bmBurgerButton: {
     position: 'fixed',
-    width: '36px',
-    height: '30px',
+    width: '3rem',
+    height: '3rem',
     right: '1rem',
     top: '1rem',
   },
   bmBurgerBars: {
-    background: '#373a47'
+    height: '1px',
+    background: '#373a47',
+   '&:nth-child(1)': {
+	  top: '30%',
+	  background:  'pink !important',
+   }
   },
   bmBurgerBarsHover: {
     background: '#a90000'
   },
   bmCrossButton: {
-    width: '24px',
+    background: 'white',
+    top: 0,
+    right: '10px',
+    width: '4rem',
+    height: '4rem',
+	  //border: '1px solid pink',
   },
   bmCross: {
-    background: '#bdc3c7'
+    //background: '#bdc3c7',
+    background: 'black',
+    width: '1px',
+    height: '3.5rem',
   },
   bmMenuWrap: {
     position: 'fixed',
     height: '100%',
   },
   bmMenu: {
-    background: 'white',
+    background: 'transparent',
     fontSize: '1.15em',
     margin: '0',
     width: '100vw',
@@ -40,17 +53,26 @@ var styles = {
   },
   bmItemList: {
     color: '#b8b7ad',
-    padding: '0 2rem',
+    padding: '0',
     margin: '5rem 0',
+    position: 'fixed',
+    width: '100vw',
+    maxWidth: '100%',
   },
   bmItem: {
     display: 'block',
     width: '100%',
     fontSize: '4rem',
     outline: '0',
+    padding: '0 1rem',
+    boxShadow: '0 5px 15px lightgrey',
+    background: 'white',
+    lineHeight: 'initial',
+    padding: '0rem 1rem 0.5rem 1rem',
+    zIndex: 2000,
   },
   bmOverlay: {
-    background: 'rgba(0, 0, 0, 0.3)'
+    background: 'rgba(0, 0, 0, 0)'
   }
 }
 

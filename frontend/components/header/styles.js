@@ -3,18 +3,19 @@ import { device } from '../../lib/device'
 
 export const StyledHeader = styled.header`
   display: flex;
-  //justify-content: space-between;
   flex-wrap: wrap;
   margin: 0;
   position: sticky;
   top: 0;
   background-color: white;
-  box-shadow: 0px 3px 5px grey;
+  box-shadow: 0px 0.5rem 1rem lightgrey;
   width: 100vw;
   max-width: 100%;
+  z-index: ${props => props.state ? "3000" : "1500"  };
 
   @media ${device.laptop} {
-    margin: 1rem 2rem;
+    padding: 1rem 2rem 1rem 1rem;
+    box-shadow: none;
   }
 `
 
@@ -23,12 +24,13 @@ export const StyledLogo = styled.a`
   line-height: 4rem;
   cursor: pointer;
   z-index: 1500;
-  letter-spacing: 0px;
-  margin: .5rem 2rem;
+  letter-spacing: 1px;
+  margin: 0rem 0rem 1rem 1rem;
 
   @media ${device.laptop} {
+    margin-bottom: 1rem;
     margin-right: 2.5rem;
     font-size: 3rem;
-    line-height: 2rem;
+    line-height: 3rem;
   }
 `

@@ -15,8 +15,8 @@ export const StyledPlateFigure = styled.figure`
 `
 
 export const StyledPlateImage = styled.img`
-  width: calc(((100vw - 5rem) / 2) - 1rem);
-  height: calc(((100vw - 5rem) / 2) - 1rem);
+  width: calc(((100vw - 3rem) / 2));
+  height: calc(((100vw - 3rem) / 2));
   background-color: transparent;
   object-fit: cover;
 

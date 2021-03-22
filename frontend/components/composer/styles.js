@@ -5,6 +5,11 @@ export const StyledComposer = styled.section`
   background-color: white;
   position: -webkit-sticky;
   position: sticky;
-  padding: 1rem 2rem .5rem 2rem;
+  z-index: 1999;
+  padding: 1rem 1rem .5rem 1rem;
   top: 0;
+
+  @media ${device.laptop} {
+  padding: 1rem 2rem .5rem 2rem;
+  }
 `
