@@ -58,7 +58,7 @@ var styles = {
   bmItem: {
     display: 'block',
     width: '100%',
-    fontSize: '4rem',
+    fontSize: '3.7rem',
     outline: '0',
     padding: '0 1rem',
     boxShadow: '0 5px 15px lightgrey',
