@@ -78,11 +78,7 @@ const PublishControls = ({url, text , video , thumb, noShare, noSave, noBack}) =
 	   noShare = true;
    }
 
-//	console.log("noShare",noShare)
-//
-//
-
-console.log("share 2",url,video,thumb)
+//console.log("share 2",url,video,thumb)
 
 return (
   <StyledControls>

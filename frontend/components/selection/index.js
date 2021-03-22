@@ -7,25 +7,18 @@ import { StyledSelection, StyledSelectionPlates, StyledSelectionImage, StyledDro
 import SelectionControls from '../selection-controls'
 import ImageControls from '../image-controls'
 import { useDrop } from 'react-dnd'
-import { v4 as uuid } from 'uuid'
 //import AddCircleOutlineIcon from '@material-ui/icons/AddCircleOutline';
-
-const Selection  = ({showText, size, handlePlateSize, handleShowText }) => {
-  const router = useRouter()
-  let pp = []
-  if(router.query.plates)
-  {
-	const pla = router.query.plates.split(',');
-	pla.map((p) => { pp = [...pp, { id: uuid(), type: "plates" , text: p, image: "/static/plates/"+p+".jpg", thumbnail: "/static/plates/thumbnails/"+p+".jpg" }]  })
-	//router.query.plates.split(',').map((p) => { pp = [...pp,{ id: uuid(), value: p}]  })
-  }
-  const [plates, setPlates] = React.useState(pp)
+const Selection  = ({plates, setPlates, handlePlates, showText, size, handlePlateSize, handleShowText }) => {
+const router = useRouter()
 
   const [{ canDrop }, drop] = useDrop({
     accept: 'plate',
     drop: (item) => {
   	//scrollSmoothToBottom ('dropZone') 
       if (item.value.id) return
+
+      handlePlates(item)
+      /*
       setPlates([
         ...plates,
         {
@@ -33,6 +26,7 @@ const Selection  = ({showText, size, handlePlateSize, handleShowText }) => {
           ...item.value,
         }
       ])
+      */
     },
     collect: (monitor) => ({
       canDrop: monitor.canDrop(),
@@ -116,7 +110,6 @@ const Selection  = ({showText, size, handlePlateSize, handleShowText }) => {
 }
 
 //<StyledDropZoneInner><AddCircleOutlineIcon style={{ fontSize: '3em' }}/></StyledDropZoneInner>
-
-              //<StyledDropZone innerRef={drop} active={canDrop}><StyledDropZoneInner><AddCircleOutlineIcon style={{ fontSize: '3em' }}/></StyledDropZoneInner></StyledDropZone>
+//<StyledDropZone innerRef={drop} active={canDrop}><StyledDropZoneInner><AddCircleOutlineIcon style={{ fontSize: '3em' }}/></StyledDropZoneInner></StyledDropZone>
 
 export default Selection

@@ -7,11 +7,11 @@ import DragPreview from '../dragpreview'
 
 import { StyledComposer } from './styles'
 
-export default function Composer({showText, size, handlePlateSize, handleShowText}) {
+export default function Composer({plates, setPlates, showText, size, handlePlateSize, handleShowText, handlePlates }) {
  return (
   <StyledComposer>
     <DragPreview />
-    <Selection showText={showText} size={size} handlePlateSize={handlePlateSize} handleShowText={handleShowText} />
+    <Selection plates={plates} setPlates={setPlates} showText={showText} size={size} handlePlateSize={handlePlateSize} handleShowText={handleShowText} handlePlates={handlePlates} />
   </StyledComposer>
 )
 

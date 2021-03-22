@@ -41,7 +41,7 @@ const generatePoem = async (plates) => {
     }
     generatePoem(plates).then(
       (poem) => {
-//	      console.log(poem)
+	      //console.log('POEM',poem)
         setLoading(false)
         setUrl(hostname + poem.slug)
         setThumb(poem.thumb)
@@ -54,9 +54,9 @@ const generatePoem = async (plates) => {
       },
     )
 
-	console.log("share1",url,video,thumb)
-  }, [])
-  //}, [router.query.plates])
+	//console.log("share1",url,video,thumb)
+  //}, [])
+  }, [router.query.plates])
 
 
   const handleMouseEnter = () => {}
@@ -73,7 +73,7 @@ const generatePoem = async (plates) => {
       {loading && (
         'Loading...'
       )}
-      { video && ( <Poem poem={{ text: 'Your poem', url: video, thumb: thumb }} autoPlay handleMouseEnter={handleMouseEnter} handleMouseOut={handleMouseOut} />)}
+      { video && ( <Poem poem={{ text: 'Your poem', url: video, video: video, thumb: thumb }} autoPlay handleMouseEnter={handleMouseEnter} handleMouseOut={handleMouseOut} />)}
     </PoemContainer>
     <ButtonsContainer>
 	  { url && <PublishControls controls="false" autoPlay="true" url={url} video={video} thumb={thumb} /> }

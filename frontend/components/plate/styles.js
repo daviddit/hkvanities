@@ -12,6 +12,7 @@ export const StyledPlate = styled.article`
 
 export const StyledPlateFigure = styled.figure`
   margin: 0;
+  position: relative;
 `
 
 export const StyledPlateImage = styled.img`
@@ -83,15 +84,14 @@ export const StyledAddPlate = styled.div`
   padding: 0;
   //background-color: white;
   //border-radius: 100%;
-  top: -1.5rem;
-  right: -1.5rem;
+  top: -1.8rem;
+  right: -1.8rem;
   opacity: ${props => props.over ? 1 : 0 };
   position: absolute;
   //display: ${props => props.over ? 'block' : 'none' };
   z-index: 1505;
   cursor: pointer;
   transition: opacity .5s ease-in-out;
-
 
   & img
   {

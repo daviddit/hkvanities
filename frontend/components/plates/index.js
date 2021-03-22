@@ -11,7 +11,8 @@ import Letters from '../letters'
 import { StyledPlates } from './styles'
 import Plate from '../plate'
 
-  export default function Plates({size, showText}) {
+export default function Plates({size, showText, handlePlates }) {
+
   const [page, setPage] = React.useState(0)
   const [letter, setLetter] = React.useState("A")
 
@@ -30,7 +31,6 @@ import Plate from '../plate'
 
   const pixPerPage = 100
   const totalPages = Math.ceil((plates.length / pixPerPage))
-  //const totalPages = plates.length
   const hasNext = (page+1) < totalPages
   const hasPrevious = page > 0
   const currentPage = page + 1 +'/'+ totalPages
@@ -88,7 +88,7 @@ import Plate from '../plate'
 
     <StyledPlates showText={showText}>
       {subPlates.map((p, i) => (
-        <Plate key={i} plate={p} size={size} showText={showText}/>
+        <Plate key={i} plate={p} size={size} showText={showText} handlePlates={handlePlates} />
       ))}
     </StyledPlates>
 
@@ -97,25 +97,4 @@ import Plate from '../plate'
   </>
   )
 }
-
-
-/*
-      <ControlsContainer>
-        <Control disabled={!hasPrevious} onClick={handlePrevPrev} text="&#8647;"/>
-        <Control disabled={!hasPrevious} onClick={handlePrev} text='&larr;'/>
-        <Control pages disabled={false} onClick={handleRand} text={currentPage} />
-        <Control disabled={!hasNext} onClick={handleNext} text='&rarr;'/>
-        <Control disabled={!hasNext} onClick={handleNextNext} text='&#8649;' alt='5 forward'/>
-      </ControlsContainer>
-
-*/
-
-
-//const fetchPlates = async (page) => {
-//  const res = await fetch(`/api/plates`)
-//  //const res = await fetch("/api/plates?",{ method: 'POST', body: JSON.stringify(req), headers: { 'Content-Type': 'application/json'} })
-//  if (!res.ok) throw new Error("Server returned an error")
-//  const body = await res.json()
-//  return body
-//}
 
