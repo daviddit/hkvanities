@@ -14,10 +14,6 @@ var styles = {
   bmBurgerBars: {
     height: '1px',
     background: '#373a47',
-   '&:nth-child(1)': {
-	  top: '30%',
-	  background:  'pink !important',
-   }
   },
   bmBurgerBarsHover: {
     background: '#a90000'
