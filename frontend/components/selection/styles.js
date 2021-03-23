@@ -14,34 +14,6 @@ export const StyledSelection = styled.section`
     }
 `
 
-
-/*
- // !important is needed sometimes 
- ::-webkit-scrollbar {
-    width: 12px !important;
- }
-
- // Track 
-::-webkit-scrollbar-track {
-   -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3) !important;
-   -webkit-border-radius: 10px !important;
-   border-radius: 10px !important;
- }
-
- // Handle 
- ::-webkit-scrollbar-thumb {
-   -webkit-border-radius: 10px !important;
-   border-radius: 10px !important;
-   background: #41617D !important;
-   -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5) !important;
-
- }
- ::-webkit-scrollbar-thumb:window-inactive {
-   background: #41617D !important;
- }
-*/
-
-
 export const StyledSelectionPlates = styled.section`
   font-size: 1rem;
   line-height: 1rem;
@@ -55,14 +27,6 @@ export const StyledSelectionPlates = styled.section`
 
   width: 100vw;
   max-width: 100%;
-
-  opacity: 0.3;
-  transition: opacity .5s ease-in-out;
-
-  &:hover {
-    opacity: 1;
-  }
-
 
     @media ${device.laptop} {
       //max-height: 40vh;
@@ -114,32 +78,6 @@ export const StyledDropZone = styled.div`
     max-width: 15rem;
     max-height: 15rem;
   }
-
-
-
- /* !important is needed sometimes */
-::-webkit-scrollbar {
-    width: 12px !important;
- }
-
- /* Track */
-::-webkit-scrollbar-track {
-   -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3) !important;
-   -webkit-border-radius: 10px !important;
-   border-radius: 10px !important;
- }
-
- /* Handle */
-::-webkit-scrollbar-thumb {
-   -webkit-border-radius: 10px !important;
-   border-radius: 10px !important;
-   background: #41617D !important;
-   -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5) !important;
-
- }
-::-webkit-scrollbar-thumb:window-inactive {
-   background: #41617D !important;
- }
 
 `
 
