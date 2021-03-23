@@ -2,6 +2,8 @@ import { Component } from 'react'
 import Link from 'next/link'
 import { slide as Menu  } from 'react-burger-menu'
 import { StyledBurger } from './styles'
+//import FacebookIcon from '@material-ui/icons/Facebook';
+//import InstagramIcon from '@material-ui/icons/Instagram';
 
 var styles = {
   bmBurgerButton: {
@@ -88,7 +90,9 @@ class Nav extends Component {
           <a href="/home" >Home</a>
           <a href="/create">Create your poem</a>
           <a href="/see">Poems</a>
-          <a href="/follow">Follow</a>
+          <a href="https://www.instagram.com/hongkongvanities/" title="HKVanities' Instragram" target="_blank"> Instagram </a>
+          <a href="https://www.facebook.com/HKVanities/" title="HKVanities' Facebook" target="_blank"> Facebook </a> 
+	    {/*<a href="/follow">Follow</a>*/}
         </Menu>
   )}
 }

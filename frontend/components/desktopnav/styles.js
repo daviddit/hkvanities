@@ -26,3 +26,11 @@ export const StyledA = styled.span`
   opacity: 1;
   }
 `
+
+export const StyledMenu2 = styled.menu`
+  //border: 1px solid pink;
+  margin: .5rem .5rem;
+  margin-left: auto;
+  font-size: 3rem;
+  line-height: 2rem;
+`

@@ -27,6 +27,13 @@ export const StyledLogo = styled.a`
   letter-spacing: 1px;
   margin: 0rem 0rem 1rem 1rem;
 
+  @media ${device.tablet} {
+    margin-bottom: 1rem;
+    margin-right: 2.5rem;
+    font-size: 3rem;
+    line-height: 3rem;
+  }
+
   @media ${device.laptop} {
     margin-bottom: 1rem;
     margin-right: 2.5rem;
