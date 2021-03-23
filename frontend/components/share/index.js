@@ -10,7 +10,6 @@ import TelegramIcon from '@material-ui/icons/Telegram';
 import TwitterIcon from '@material-ui/icons/Twitter';
 import MailIcon from '@material-ui/icons/Mail';
 import ShareIcon from '@material-ui/icons/Share';
-import Image from 'next/image';
 import { device } from '../../lib/device'
 import { Icon, InlineIcon } from '@iconify/react';
 import wechatIcon from '@iconify/icons-mdi/wechat';
@@ -187,7 +186,7 @@ export default function Share({ url, video, thumb, onClick, text}) {
 	 >
 	  <Fade in={open}>
 	    <div style={modalStyle} className={classes.paper}>
-		{thumb && <Image src={thumb} width="300" height="300"  />}
+		{thumb && <img src={thumb} width="300" height="300"/>}
 
 	      <li className={classes.shared0}>
 	      </li>

@@ -73,8 +73,6 @@ const PublishControls = ({url, text , video , thumb, noShare, noSave, noBack}) =
 
    var fileName = path.basename(video)
 
-   console.log('fileName',fileName)
-
    if(router.query.plates) // just generated, have to save it first before sharing
    {
 	   noSave = false;
@@ -82,8 +80,6 @@ const PublishControls = ({url, text , video , thumb, noShare, noSave, noBack}) =
 	   noShare = true;
 	   fileName='YourPoem.mp4'
    }
-
-   console.log('fileName2',fileName)
 
 //console.log("share 2",url,video,thumb)
 

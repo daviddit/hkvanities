@@ -45,6 +45,11 @@ const Poem = ({ poem, controls, autoPlay }) => {
 	<meta property="og:image:width" content="1024" />
 	<meta property="og:image:height" content="682" />
 	<meta name="twitter:card" content="summary_large_image" />
+
+	<meta property="og:player" content={url_video} />
+	<meta property="og:player:width" content="300" />
+	<meta property="og:player:height" content="300" />
+	<meta property="og:player:stream" content={url_video} />
 */
 
   ////const url = "https://" + 'hkvanities.dieres.com'+ poem.slug;
@@ -54,23 +59,23 @@ const Poem = ({ poem, controls, autoPlay }) => {
   const url = poem.slug ? hostname + poem.slug.replace('/ /g','%20') : poem.url
   const url_img = hostname + poem.thumb.replace('/ /g','%20')
   const url_video = hostname + poem.video.replace('/ /g','%20')
+  const poem_text = poem.text ? poem.text : 'HKVANIT1ES Poem' 
 
   return (
   <StyledPoemFigure>
 
 	<meta property="og:locale" content="en_HK" />
-	<meta property="og:type" content={url} />
-	<meta property="og:title" content={poem.text} />
+	<meta property="og:type" content="video.other" />
+	<meta property="og:title" content={poem_text} />
 	<meta property="og:description" content="" />
 	<meta property="og:url" content={url} />
 	<meta property="og:site_name" content="HKVANIT1ES" />
 	<meta property="og:image" content={url_img} />
 	<meta property="og:image:width" content="300" />
 	<meta property="og:image:height" content="300" />
-	<meta property="og:player" content={url_video} />
-	<meta property="og:player:width" content="300" />
-	<meta property="og:player:height" content="300" />
-	<meta property="og:player:stream" content={url_video} />
+	<meta property="og:video" content={url_video} />
+	<meta property="og:video:width" content="300" />
+	<meta property="og:video:height" content="300" />
 	<meta property="twitter:card" content="summary_large_image" />
 
     <StyledPoem id={poem.text}
