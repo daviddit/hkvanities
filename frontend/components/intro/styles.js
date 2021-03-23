@@ -5,7 +5,7 @@ export const StyledIntro = styled.p`
   margin: 1rem 0 2rem 0;
   font-size: 1.7rem;
   line-height: 1.7rem;
-  letter-spacing: 1.2px;
+  //letter-spacing: 1.2px;
 
   @media ${device.laptop} {
     font-size: 3rem;

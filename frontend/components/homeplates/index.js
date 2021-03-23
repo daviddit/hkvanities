@@ -15,7 +15,7 @@ import Loading from '../loading'
 
   let random = plates.slice() // clone array
 	
-  const pixPerPage = 10
+  const pixPerPage = 20
   const timeToChange = 1500
 
 React.useEffect(() => {
