@@ -9,6 +9,7 @@ import fileDownload from 'js-file-download'
 import { StyledControls, StyledControl } from './styles'
 
 const PublishControls = ({url, text , video , thumb, noShare, noSave, noBack}) => {
+  const path = require("path");
 
   const router = useRouter()
   //const plates = (router.query.plates || '').split(',')
@@ -70,19 +71,25 @@ const PublishControls = ({url, text , video , thumb, noShare, noSave, noBack}) =
 
 //	console.log("noShare",noShare)
 
+   var fileName = path.basename(video)
+
+   console.log('fileName',fileName)
 
    if(router.query.plates) // just generated, have to save it first before sharing
    {
 	   noSave = false;
 	   noBack = false;
 	   noShare = true;
+	   fileName='YourPoem.mp4'
    }
+
+   console.log('fileName2',fileName)
 
 //console.log("share 2",url,video,thumb)
 
 return (
   <StyledControls>
-    { video && <StyledControl onClick={() => {handleDownload(video,'YourPoem.mp4')}} >Download</StyledControl> }
+    { video && <StyledControl onClick={() => {handleDownload(video,fileName)}} >Download</StyledControl> }
     { noShare ? '' : '' }
     <Share text={text} url={url} video={video} thumb={thumb} />
     { noBack  ? '' : (<StyledControl button onClick={handleBack}>Back</StyledControl>) }

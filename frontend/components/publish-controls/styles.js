@@ -26,6 +26,7 @@ export const StyledControl = styled.button`
   white-space: nowrap;
   cursor: pointer;
   outline: 0;
+  min-width: 16rem;
 
   @media ${device.laptop} {
   margin: 0 .5rem 0 .5rem ;

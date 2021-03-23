@@ -1,10 +1,12 @@
 import Link from 'next/link'
 import styled from 'styled-components'
 import { StyledPoemFigure, StyledPoem, StyledPoemCaption } from './styles'
+import { hostname } from '../../config.js'
 
 
     //<StyledPoem autoPlay muted loop id={poem.text} key={poem.video}>
 const Poem = ({ poem, controls, autoPlay }) => {
+
  const autoplay = autoPlay ? true : null
  const preload = autoPlay ? null : "metadata"
 
@@ -49,9 +51,9 @@ const Poem = ({ poem, controls, autoPlay }) => {
   ////const url_img = poem.thumb ? "https://" + 'hkvanities.dieres.com'+ poem.thumb.replace('/ /g','+') : null
   //const url_video = poem.thumb ? "https://" + 'hkvanities.dieres.com'+ poem.video.replace('/ /g','+') : null
 
-  const url = poem.url;
-  const url_img = poem.thumb
-  const url_video = poem.video
+  const url = poem.slug ? hostname + poem.slug.replace('/ /g','%20') : poem.url
+  const url_img = hostname + poem.thumb.replace('/ /g','%20')
+  const url_video = hostname + poem.video.replace('/ /g','%20')
 
   return (
   <StyledPoemFigure>

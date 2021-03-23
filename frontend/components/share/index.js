@@ -129,10 +129,27 @@ export default function Share({ url, video, thumb, onClick, text}) {
   const handleUrlOther = () => {
 
 	  React.useEffect(() => {
-	  navigator.share()
 	  }, [])
   };
 */
+
+/*
+ if (navigator?.share) {
+      navigator
+        .share({
+          title: text,
+          text: `Check out ${text} on ${hostname}`,
+          url: url,
+        })
+        .then(() => {
+          console.log('Successfully shared');
+        })
+        .catch(error => {
+          console.error('Something went wrong sharing the blog', error);
+        });
+}
+*/
+
 
   //const urlWhatsapp = device.mobile ? "whatsapp://send?text="+url : "https://web.whatsapp.com/send?text=" + url
   const urlWhatsapp = "https://www.addtoany.com/add_to/whatsapp?linkurl=" + encodeURIComponent(url) + "&amp;linkname=" +  encodeURIComponent(text)
@@ -150,25 +167,8 @@ export default function Share({ url, video, thumb, onClick, text}) {
   const urlPinterest = "https://www.addtoany.com/add_to/pinterest?linkurl=" + encodeURIComponent(url) + "&amp;linkname=" +  encodeURIComponent(text)
 
   const urlWeChat = "https://www.addtoany.com/add_to/wechat?linkurl=" + encodeURIComponent(url) + "&amp;linkname=" +  encodeURIComponent(text)
+
   const urlMail = "https://www.addtoany.com/add_to/email?linkurl=" + encodeURIComponent(url) + "&amp;linkname=" +  encodeURIComponent(text)
-
-
-	/*
-
-	<!-- AddToAny BEGIN -->
-<div>
-<a href="https://www.addtoany.com/share#url=https%3A%2F%2Fhkvanitiesdev.dieres.com&amp;title=" target="_blank"><img src="https://static.addtoany.com/buttons/a2a.svg" width="32" height="32" style="background-color:royalblue"></a>
-<a href="https://www.addtoany.com/add_to/facebook?linkurl=https%3A%2F%2Fhkvanitiesdev.dieres.com&amp;linkname=" target="_blank"><img src="https://static.addtoany.com/buttons/facebook.svg" width="32" height="32" style="background-color:royalblue"></a>
-<a href="https://www.addtoany.com/add_to/twitter?linkurl=https%3A%2F%2Fhkvanitiesdev.dieres.com&amp;linkname=" target="_blank"><img src="https://static.addtoany.com/buttons/twitter.svg" width="32" height="32" style="background-color:royalblue"></a>
-<a href="https://www.addtoany.com/add_to/email?linkurl=https%3A%2F%2Fhkvanitiesdev.dieres.com&amp;linkname=" target="_blank"><img src="https://static.addtoany.com/buttons/email.svg" width="32" height="32" style="background-color:royalblue"></a>
-<a href="https://www.addtoany.com/add_to/whatsapp?linkurl=https%3A%2F%2Fhkvanitiesdev.dieres.com&amp;linkname=" target="_blank"><img src="https://static.addtoany.com/buttons/whatsapp.svg" width="32" height="32" style="background-color:royalblue"></a>
-<a href="https://www.addtoany.com/add_to/telegram?linkurl=https%3A%2F%2Fhkvanitiesdev.dieres.com&amp;linkname=" target="_blank"><img src="https://static.addtoany.com/buttons/telegram.svg" width="32" height="32" style="background-color:royalblue"></a>
-<a href="https://www.addtoany.com/add_to/pinterest?linkurl=https%3A%2F%2Fhkvanitiesdev.dieres.com&amp;linkname=" target="_blank"><img src="https://static.addtoany.com/buttons/pinterest.svg" width="32" height="32" style="background-color:royalblue"></a>
-<a href="https://www.addtoany.com/add_to/wechat?linkurl=https%3A%2F%2Fhkvanitiesdev.dieres.com&amp;linkname=" target="_blank"><img src="https://static.addtoany.com/buttons/wechat.svg" width="32" height="32" style="background-color:royalblue"></a>
-<a href="https://www.addtoany.com/add_to/copy_link?linkurl=https%3A%2F%2Fhkvanitiesdev.dieres.com&amp;linkname=" target="_blank"><img src="https://static.addtoany.com/buttons/link.svg" width="32" height="32" style="background-color:royalblue"></a>
-</div>
-<!-- AddToAny END -->
-		*/
 
 
 
@@ -207,10 +207,10 @@ export default function Share({ url, video, thumb, onClick, text}) {
 	      <li className={classes.shared0}>
 		<TelegramShareButton title={text} url={url}><TelegramIcon/> Telegram</TelegramShareButton>
 	      </li>
-	      <li className={classes.shared1}>
+	  	{/*<li className={classes.shared1}>
 		<a href={urlWeChat} target="_blank"><Icon icon={wechatIcon} /> WeChat</a>
-	      </li>
-	      <li className={classes.shared0}>
+	      </li>*/}
+	      <li className={classes.shared1}>
 		<EmailShareButton title={text} url={url}><MailIcon/> E-mail</EmailShareButton>
 	      </li>
 	  {/*
