@@ -11,7 +11,7 @@ export const StyledHeader = styled.header`
   box-shadow: 0px 0.5rem 1rem lightgrey;
   width: 100vw;
   max-width: 100%;
-  z-index: ${props => props.state ? "3000" : "1500"  };
+  z-index: ${props => props.state ? "3000" : "500"  };
 
   @media ${device.laptop} {
     padding: 1rem 2rem 1rem 1rem;
