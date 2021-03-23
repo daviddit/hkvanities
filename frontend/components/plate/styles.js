@@ -12,6 +12,9 @@ export const StyledPlate = styled.article`
 
 export const StyledPlateFigure = styled.figure`
   margin: 0;
+`
+
+export const StyledPlateImageContainer = styled.div`
   position: relative;
 `
 
@@ -83,18 +86,18 @@ export const StyledPlateText = styled.div`
 export const StyledAddPlate = styled.div`
   padding: 0;
   //background-color: white;
-  //border-radius: 100%;
-  top: -1.8rem;
-  right: -1.8rem;
-  opacity: ${props => props.over ? 1 : 0 };
+  top: 50%;
+  right: 50%;
+  opacity: ${props => props.over ? 0.95 : 0 };
   position: absolute;
   //display: ${props => props.over ? 'block' : 'none' };
   z-index: 1505;
   cursor: pointer;
   transition: opacity .5s ease-in-out;
+  transform: translate(50%,-50%);
 
   & img
   {
-   width: 3rem;
+    width:  ${props => props.size == "S" ? '3rem' : '8rem'};
   }
 `

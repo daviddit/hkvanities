@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import styled from 'styled-components'
-import { StyledPlate, StyledPlateFigure, StyledPlateImage, StyledPlateCaption, StyledPlateImageNoHover, StyledPlateText, StyledAddPlate } from './styles'
+import { StyledPlate, StyledPlateFigure, StyledPlateImage, StyledPlateImageContainer, StyledPlateCaption, StyledPlateImageNoHover, StyledPlateText, StyledAddPlate } from './styles'
 import { useDrag } from 'react-dnd'
 
 const Plate = ({ plate, showText, nohover, size, handlePlates }) => {
@@ -39,10 +39,12 @@ if(nohover)
   return (
      <StyledPlate innerRef={drag} size={size} onContextMenu={(e) => e.preventDefault() } onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
       <StyledPlateFigure>
+	  <StyledPlateImageContainer>
 	  { !showText && (<StyledPlateImage draggable={draggable} nohover={nohover} size={size} src={plate.thumbnail} alt={plate.text} /> )  }
 	  { showText && (<StyledPlateText size={size}>({plate.text.split(" ").join("")})</StyledPlateText>) }
+	  { handlePlates && (<StyledAddPlate size={size} src={plate.thumbnail} alt={plate.text} over={over} onClick={handlePlates.bind(this,plate)}><img src="/static/img/add.svg"/></StyledAddPlate>)}
+	  </StyledPlateImageContainer>
 	  { !showText && (<StyledPlateCaption>{plate.text}</StyledPlateCaption>) }
-	  { handlePlates && (<StyledAddPlate src={plate.thumbnail} alt={plate.text} over={over} onClick={handlePlates.bind(this,plate)}><img src="/static/img/add.svg"/></StyledAddPlate>)}
       </StyledPlateFigure>
      </StyledPlate>
   )
