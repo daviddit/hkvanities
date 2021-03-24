@@ -37,7 +37,8 @@ export const StyledPlateImage = styled.img`
     ${props => props.size == "L" ? 'height: calc(((100vw - 5rem) / 3) - 2rem);' : null}
   }
 
-  ${props => props.nohover ? "cursor: initial":  "&:hover { outline: .5rem solid hsl(46, 100%, 50%);}" }
+  //${props => props.nohover ? "cursor: initial":  "&:hover { outline: .5rem solid hsl(46, 100%, 50%);}" }
+  ${props => props.nohover ? "cursor: initial": null }
 `
 
 export const StyledPlateCaption = styled.figcaption`

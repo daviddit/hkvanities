@@ -4,7 +4,8 @@ import { device } from '../../lib/device'
 export const StyledPoem = styled.video`
   width: 90vw;
   height: auto;
-  background-color: lightgrey;
+  //background-color: lightgrey;
+  background-color: transparent;
   bottom: 0;
   opacity: ${props => props.autoPlay ? "1" : "0.5" };
   //${props => props.autoPlay ? null : "filter: blur(2px);" }
@@ -27,7 +28,7 @@ export const StyledPoem = styled.video`
 
 export const StyledPoemCaption = styled.figcaption`
   text-transform: uppercase;
-  font-size: 1rem;
+  font-size: 1.3rem;
   line-height: 1rem;
   color: black;
   padding-bottom: 1.5rem;

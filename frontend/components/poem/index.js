@@ -56,9 +56,9 @@ const Poem = ({ poem, controls, autoPlay }) => {
   ////const url_img = poem.thumb ? "https://" + 'hkvanities.dieres.com'+ poem.thumb.replace('/ /g','+') : null
   //const url_video = poem.thumb ? "https://" + 'hkvanities.dieres.com'+ poem.video.replace('/ /g','+') : null
 
-  const url = poem.slug ? hostname + poem.slug.replace('/ /g','%20') : poem.url
-  const url_img = hostname + poem.thumb.replace('/ /g','%20')
-  const url_video = hostname + poem.video.replace('/ /g','%20')
+  const url = poem.slug ? hostname + poem.slug.replace('/ /g','%2520') : poem.url
+  const url_img = hostname + poem.thumb.replace('/ /g','%2520')
+  const url_video = hostname + poem.video.replace('/ /g','%2520')
   const poem_text = poem.text ? poem.text : 'HKVANIT1ES Poem' 
 
   return (
@@ -80,7 +80,7 @@ const Poem = ({ poem, controls, autoPlay }) => {
 
     <StyledPoem id={poem.text}
 	  	key={poem.video}
-	  	poster={poem.thumb} 
+		preload={preload}
 	  	controls={controls}
 	  	autoPlay={autoplay}
 	  	muted
@@ -91,7 +91,7 @@ const Poem = ({ poem, controls, autoPlay }) => {
 	  	onMouseEnter={handleMouseEnter}
 	  	onMouseOut={handleMouseOut}
 	  >
-      <source src={poem.video} type="video/mp4"/>
+      <source src={poem.video+'#t=0.1'} type="video/mp4"/>
       Your browser does not support HTML5 video.
     </StyledPoem>
     { poem.text && (<StyledPoemCaption hasSlug={poem.slug ? true : null}>
