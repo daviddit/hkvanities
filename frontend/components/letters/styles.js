@@ -3,21 +3,23 @@ import { device } from '../../lib/device'
 
 export const StyledLetters = styled.section`
   display: flex;
-  justify-content: ${props => props.showText ? "start" : "space-between" };
+  //justify-content: ${props => props.showText ? "start" : "start" };
+  justify-content: flex-start;
   flex-wrap: wrap;
   flex-direction: row;
   padding: 0 2rem ;
 
   @media ${device.laptop} {
-
+  justify-content: space-between;
   }
 `
 
 export const StyledLetter = styled.button`
-  font-size: 4rem;
+  font-size: 3rem;
   cursor: pointer;
   //border: 1px solid transparent;
   border: 1px solid  ${props => props.isLetter ? "black" : "transparent"};
+  padding: 0;
   width: 5rem;
   height: 5rem;
   background-color: white;
@@ -41,10 +43,9 @@ export const StyledLetter = styled.button`
 
 
   @media ${device.laptop} {
-   width: 4.25rem;
-   height: 4.25rem;
+   width: 3rem;
+   height: 3rem;
    font-size: 2rem;
-   padding: 1rem;
 
 	  &:hover
 	  {

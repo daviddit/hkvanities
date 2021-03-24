@@ -17,6 +17,8 @@ export const StyledImageControl = styled.button`
   border-radius: 50%;
   background-color: white;
   padding: 0rem 0.9rem;
+  width: 2.5rem;
+  height: 2.5rem;
   margin: .5rem;
   text-transform: uppercase;
   white-space: nowrap;
@@ -44,17 +46,17 @@ export const StyledImageControl = styled.button`
 export const StyledImageTextControl = styled.a`
   //width: 40%;
   font-size: 1.2rem;
-  border: 1px solid black;
   background-color: transparent;
   border: 0;
-  padding: 0rem 1.5rem;
   //line-height: 0.5rem;
-  margin: .5rem;
-  margin: .5rem .5rem .5rem 2rem;
   white-space: nowrap;
   cursor: pointer;
+  width: 15rem;
+  text-align: center;
 
   @media ${device.laptop} {
+  padding: 0rem 1.5rem;
+  margin: .5rem .5rem .5rem 2rem;
   display: block;
   }
 
