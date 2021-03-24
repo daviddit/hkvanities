@@ -82,7 +82,6 @@ const Poem = ({ poem, controls, autoPlay }) => {
 	  	key={poem.video}
 	  	poster={poem.thumb} 
 	  	controls={controls}
-	  	preload={preload}
 	  	autoPlay={autoplay}
 	  	muted
 	  	loop
@@ -103,6 +102,7 @@ const Poem = ({ poem, controls, autoPlay }) => {
 
 }
 
+//preload={preload}
 
 Poem.defaultProps = {
   controls: false,
