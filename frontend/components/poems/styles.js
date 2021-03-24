@@ -25,7 +25,7 @@ export const PoemContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
-  justify-content: ${props => props.poemsLength > 0 ? 'flext-start' : 'center' };
+  justify-content: ${props => props.poemsLength > 0 ? 'space-between' : 'center' };
   margin: 2rem 0 0 0;
   padding: 2rem ;
 `

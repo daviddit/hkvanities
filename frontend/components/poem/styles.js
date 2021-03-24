@@ -9,11 +9,12 @@ export const StyledPoem = styled.video`
   opacity: ${props => props.autoPlay ? "1" : "0.5" };
   //${props => props.autoPlay ? null : "filter: blur(2px);" }
   //object-fit: cover;
+  margin: 0;
 
   @media ${device.laptop} {
     width: calc(((100vw - 6rem) / 4) - 2rem);
     height: calc(((100vw - 6rem) / 4) - 2rem);
-    margin: 0 1rem;
+    margin: 0;
   }
 
  &:hover
@@ -30,7 +31,7 @@ export const StyledPoemCaption = styled.figcaption`
   line-height: 1rem;
   color: black;
   padding-bottom: 1.5rem;
-  margin: 0 1rem;
+  margin: 0;
 
   &:hover
   {
