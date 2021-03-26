@@ -1,4 +1,5 @@
 import Head from 'next/head'
+import { site_name } from '../../config.js'
 
 const Meta = () => (
     <Head>
@@ -6,7 +7,7 @@ const Meta = () => (
       <meta charSet="utf-8" />
       <link rel="shortcut icon" href="/static/favicon.ico" />
       <link rel="stylesheet" type="text/css" href="/static/nprogress.css" />
-      <title>HK Vanities</title>
+      <title>{site_name}</title>
     </Head>
 
 )

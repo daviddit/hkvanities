@@ -1,3 +1,4 @@
+export const site_name = "HKVANIT1ES"
 export const endpoint = `http://localhost:4444`;
 export const prodEndpoint = ``;
 export const host = `https://hkvanities.dieres.com`;

@@ -46,7 +46,7 @@ export default function SeeId({ ...props }){
         </ErrorText>
       )}
       { !error && !poem && ( 'Loading...')}
-      {( poem && <Poem poem={poem} autoPlay handleMouseEnter={handleMouseEnter} handleMouseOut={handleMouseOut} />)}
+      {( poem && <Poem poem={poem} showTitle autoPlay handleMouseEnter={handleMouseEnter} handleMouseOut={handleMouseOut} />)}
     </PoemContainer>
       <ControlsContainer>
         <Control href={prevPrev}>&#8647;</Control>

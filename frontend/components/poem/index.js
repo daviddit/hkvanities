@@ -1,11 +1,13 @@
 import Link from 'next/link'
 import styled from 'styled-components'
 import { StyledPoemFigure, StyledPoem, StyledPoemCaption } from './styles'
-import { hostname } from '../../config.js'
+import Title from '../title'
+import { hostname, site_name } from '../../config.js'
+import Head from 'next/head'
 
 
     //<StyledPoem autoPlay muted loop id={poem.text} key={poem.video}>
-const Poem = ({ poem, controls, autoPlay }) => {
+const Poem = ({ poem, controls, autoPlay, showTitle }) => {
 
  const autoplay = autoPlay ? true : null
  const preload = autoPlay ? null : "metadata"
@@ -63,21 +65,22 @@ const Poem = ({ poem, controls, autoPlay }) => {
 
   return (
   <StyledPoemFigure>
-
-	<meta property="og:locale" content="en_HK" />
-	<meta property="og:type" content="video.other" />
-	<meta property="og:title" content={poem_text} />
-	<meta property="og:description" content="" />
-	<meta property="og:url" content={url} />
-	<meta property="og:site_name" content="HKVANIT1ES" />
-	<meta property="og:image" content={url_img} />
-	<meta property="og:image:width" content="300" />
-	<meta property="og:image:height" content="300" />
-	<meta property="og:video" content={url_video} />
-	<meta property="og:video:width" content="300" />
-	<meta property="og:video:height" content="300" />
-	<meta property="twitter:card" content="summary_large_image" />
-
+    <Head>
+	{ showTitle && (<Title title={poem_text}/>)}
+	<meta name="og:locale" content="en_HK" />
+	<meta name="og:type" content="video.other" />
+	<meta name="og:title" content={poem_text} />
+	<meta name="og:description" content="" />
+	<meta name="og:url" content={url} />
+	<meta name="og:site_name" content="{site_name}" />
+	<meta name="og:image" content={url_img} />
+	<meta name="og:image:width" content="300" />
+	<meta name="og:image:height" content="300" />
+	<meta name="og:video" content={url_video} />
+	<meta name="og:video:width" content="300" />
+	<meta name="og:video:height" content="300" />
+	<meta name="twitter:card" content="summary_large_image" />
+    </Head>
     <StyledPoem id={poem.text}
 	  	key={poem.video}
 		preload={preload}
@@ -102,11 +105,10 @@ const Poem = ({ poem, controls, autoPlay }) => {
 
 }
 
-//preload={preload}
-
 Poem.defaultProps = {
-  controls: false,
-  autoPlay: false,
+  controls:  false,
+  autoPlay:  false,
+  showTitle: false,
 }
 
 
