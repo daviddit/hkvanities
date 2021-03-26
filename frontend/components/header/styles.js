@@ -14,6 +14,7 @@ export const StyledHeader = styled.header`
   z-index: ${props => props.state ? "3000" : "500"  };
 
   @media ${device.laptop} {
+    position: static;
     padding: 1rem 2rem 1rem 1rem;
     box-shadow: none;
   }

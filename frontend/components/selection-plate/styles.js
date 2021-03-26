@@ -25,7 +25,7 @@ export const StyledSelectionImage = styled.img`
   }
 
   &:hover {
-    outline: .3rem solid hsl(46, 100%, 50%);
+    //outline: .3rem solid hsl(46, 100%, 50%);
   }
 `
 export const StyledSelectionCaption = styled.figcaption`

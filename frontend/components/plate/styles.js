@@ -86,13 +86,13 @@ export const StyledPlateText = styled.div`
 
 export const StyledAddPlate = styled.div`
   padding: 0;
-  //background-color: white;
   top: 50%;
   right: 50%;
   opacity: ${props => props.over ? 0.95 : 0 };
-  position: absolute;
+  //background-color: white;
   //display: ${props => props.over ? 'block' : 'none' };
-  z-index: 1505;
+  position: absolute;
+  //z-index: 1505;
   cursor: pointer;
   transition: opacity .5s ease-in-out;
   transform: translate(50%,-50%);

@@ -16,7 +16,7 @@ export const StyledImageControl = styled.button`
   border: ${props => props.active ? "1px solid black" : "1px solid transparent"};
   border-radius: 50%;
   background-color: white;
-  padding: 0rem 0.9rem;
+  padding: 0rem;
   width: 2.5rem;
   height: 2.5rem;
   margin: .5rem;
