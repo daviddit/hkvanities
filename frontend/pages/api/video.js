@@ -42,7 +42,7 @@ const fn = async (req) => {
     const publicPathVideo = path.join(outDir, "temp.mp4")
     const publicPathThumb = path.join(outDir, "temp.jpg")
 
-    console.log(1,poemsDir)
+    //console.log(1,poemsDir)
 
     const dir = await fs.readdir(poemsDir)
 
@@ -52,11 +52,11 @@ const fn = async (req) => {
 	  
     const newDir =  path.join(poemsDir,id.toString())
 
-    console.log(4,newDir)
+    //console.log(4,newDir)
 
     await fs.mkdir(newDir);
 
-    console.log(5,newDir)
+    //console.log(5,newDir)
 
     const newVideo = path.join(newDir, 'YourPoem.mp4')
     const newThumb = path.join(newDir, 'YourPoem.jpg')
@@ -64,13 +64,13 @@ const fn = async (req) => {
     //await fs.copyFile(outPath, publicPathVideo)
     //await fs.copyFile(thumb, publicPathThumb)
 	  //
-    console.log(6,newVideo)
-    console.log(7,newThumb)
+    //console.log(6,newVideo)
+    //console.log(7,newThumb)
 
     await fs.copyFile(outPath, newVideo)
     await fs.copyFile(thumb, newThumb)
 
-    console.log(8,"return")
+    //console.log(8,"return")
 
     //return { url: `/static/out/${publicNameVideo}`, thumb: `/static/out/${publicNameThumb}` }
     return { id: id, slug: '/poem/'+id, video: '/'+newVideo, thumb: '/'+newThumb }
