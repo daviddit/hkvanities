@@ -18,6 +18,7 @@ export default function Create() {
     setShowText(!showText)
   }
 
+
    const handlePlates  = (item) => {
 
    if(!item.value)
@@ -33,6 +34,8 @@ export default function Create() {
           ...item.value,
         }
       ])
+
+
    }
 
   let pp = []
@@ -43,6 +46,20 @@ export default function Create() {
 	//router.query.plates.split(',').map((p) => { pp = [...pp,{ id: uuid(), value: p}]  })
   }
   const [plates, setPlates] = React.useState(pp)
+
+  const scrollToBottom = (id) => {
+	var div = document.getElementById(id);
+	  //console.log(0,div)
+
+	  //console.log(1,div.scrollTop,' = ',div.scrollHeight)
+          div.scrollTop = div.scrollHeight
+	  //console.log(2,div.scrollTop)
+  }
+
+
+  React.useEffect(() => {
+    scrollToBottom ('StyledSelection') 
+  }, [plates])
 
  return (
     <div>

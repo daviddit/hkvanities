@@ -14,7 +14,6 @@ const router = useRouter()
   const [{ canDrop }, drop] = useDrop({
     accept: 'plate',
     drop: (item) => {
-  	//scrollSmoothToBottom ('dropZone') 
       if (item.value.id) return
 
       handlePlates(item)
@@ -33,22 +32,6 @@ const router = useRouter()
     })
   })
 
-
-
-  function scrollSmoothToBottom (id) {
-	var div = document.getElementById(id);
-	  console.log(0,div)
-	  /*
-	$('#' + id).animate({
-		scrollTop: div.scrollHeight - div.clientHeight
-	}, 500);
-	*/
-
-	  console.log(1,div.scrollTop,' = ',div.scrollHeight,' - ',div.clientHeight)
-	  console.log(2,div.scrollTop)
-          div.scrollTop = div.clientHeight;
-	  console.log(3,div.scrollTop)
-  }
 
 
   const handleReset = () => {
@@ -83,7 +66,7 @@ const router = useRouter()
 
   return (
     <React.Fragment>
-      <StyledSelection>
+      <StyledSelection id="StyledSelection">
         <StyledSelectionPlates>
           {plates.length ? (
             <React.Fragment>
