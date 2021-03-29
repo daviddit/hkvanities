@@ -1,9 +1,11 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
-static/plates/*
-static/out/*
-static/poems/*
-/tmp/*
+static/plates/*.jpg
+static/plates/thumbnails/*.jpg
+static/out/*.mp4
+static/out/*.jpg
+static/poems/*/
+tmp/*/
 *~
 .*.sw?
 
