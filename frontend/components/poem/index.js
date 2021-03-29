@@ -86,11 +86,13 @@ const Poem = ({ poem, controls, autoPlay, showTitle }) => {
 		preload={preload}
 	  	controls={controls}
 	  	autoPlay={autoplay}
+	  	playsInline={autoplay}
 	  	muted
 	  	loop
 	  	ratio="1:1"
 	  	width="100%"
 	  	height="100%"
+	  	onClick={handleMouseEnter}
 	  	onMouseEnter={handleMouseEnter}
 	  	onMouseOut={handleMouseOut}
 	  >
