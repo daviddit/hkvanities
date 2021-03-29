@@ -5,6 +5,7 @@ export const StyledHeader = styled.header`
   display: flex;
   flex-wrap: wrap;
   margin: 0;
+  position: -webkit-sticky;
   position: sticky;
   top: 0;
   background-color: white;

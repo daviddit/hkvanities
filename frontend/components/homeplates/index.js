@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import Link from 'next/link'
 import styled from 'styled-components'
-import plates from '../../data/platesData.json'
+import plates from '../../data/homePlatesData.json'
 import Button from '../button'
 
 import { StyledPlates } from './styles'
