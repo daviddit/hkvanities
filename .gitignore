@@ -106,10 +106,5 @@ dist
 # TernJS port file
 .tern-port
 
-#backups
-frontend_keep
-frontend.tar.gz
-frontend2.tar.gz
-
 .well-known/
 .DS_Store
