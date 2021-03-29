@@ -1,5 +1,6 @@
 import Head from 'next/head'
 import { site_name } from '../../config.js'
+import Analytics from '../analytics'
 
 const Meta = () => (
     <Head>
@@ -8,6 +9,7 @@ const Meta = () => (
       <link rel="shortcut icon" href="/static/favicon.ico" />
       <link rel="stylesheet" type="text/css" href="/static/nprogress.css" />
       <title>{site_name}</title>
+      <Analytics id="UA-193117145-1"/>
     </Head>
 
 )
