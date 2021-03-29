@@ -124,14 +124,6 @@ export default function Share({ url, video, thumb, onClick, text}) {
     setOpen(false);
   };
 
-	/*
-  const handleUrlOther = () => {
-
-	  React.useEffect(() => {
-	  }, [])
-  };
-*/
-
 /*
  if (navigator?.share) {
       navigator
@@ -149,27 +141,10 @@ export default function Share({ url, video, thumb, onClick, text}) {
 }
 */
 
-
-  //const urlWhatsapp = device.mobile ? "whatsapp://send?text="+url : "https://web.whatsapp.com/send?text=" + url
-  const urlWhatsapp = "https://www.addtoany.com/add_to/whatsapp?linkurl=" + encodeURIComponent(url) + "&amp;linkname=" +  encodeURIComponent(text)
-
-  //const urlTelegram = "https://t.me/share/url?url=" +  url
-  const urlTelegram = "https://www.addtoany.com/add_to/telegram?linkurl=" + encodeURIComponent(url) + "&amp;linkname=" +  encodeURIComponent(text)
-
-  //const urlFacebook = "https://www.facebook.com/sharer/sharer.php?u=" + url
-  const urlFacebook = "https://www.addtoany.com/add_to/facebook?linkurl=" + encodeURIComponent(url) + "&amp;linkname=" +  encodeURIComponent(text)
-
-  //const urlTwitter = "https://twitter.com/intent/tweet?text=" + url
-  const urlTwitter = "https://www.addtoany.com/add_to/twitter?linkurl=" + encodeURIComponent(url) + "&amp;linkname=" +  encodeURIComponent(text)
-
-  //const urlPinterest = "http://pinterest.com/pin/create/button/?url=" + url + "&media=" + thumb + "&description=" + encodeURIComponent(text)
-  const urlPinterest = "https://www.addtoany.com/add_to/pinterest?linkurl=" + encodeURIComponent(url) + "&amp;linkname=" +  encodeURIComponent(text)
-
-  const urlWeChat = "https://www.addtoany.com/add_to/wechat?linkurl=" + encodeURIComponent(url) + "&amp;linkname=" +  encodeURIComponent(text)
-
-  const urlMail = "https://www.addtoany.com/add_to/email?linkurl=" + encodeURIComponent(url) + "&amp;linkname=" +  encodeURIComponent(text)
+  text = text ? text : "Watch the poem I've just created at "
 
 
+  //const urlWeChat = "https://www.addtoany.com/add_to/wechat?linkurl=" + encodeURIComponent(url) + "&amp;linkname=" +  encodeURIComponent(text)
 
   return (
     <div>
@@ -212,11 +187,6 @@ export default function Share({ url, video, thumb, onClick, text}) {
 	      <li className={classes.shared1}>
 		<EmailShareButton title={text} url={url}><MailIcon/> E-mail</EmailShareButton>
 	      </li>
-	  {/*
-		  <li className={classes.shared1}>
-		<li onClick={handleUrlOther}><ShareIcon/> Other</li>
-	      </li>
-	      */}
 	    </div>
 	  </Fade>
       </Modal>
