@@ -47,7 +47,7 @@ class Header extends Component {
   render() {
     return(
       <StyledHeader state={this.state.menuOpen}>
-        <Link href="/">
+        <Link href="/home">
         <StyledLogo onClick={() => this.closeMenu()}>HKVANIT1ES</StyledLogo>
         </Link>
         <MediaQuery maxDeviceWidth={1024}>
