@@ -86,13 +86,14 @@ export default function Plates({size, showText, handlePlates }) {
   return (
   <>
 
+    <Letters handleLetter={handleLetter} letter={letter}/>
+
     <StyledPlates showText={showText}>
       {subPlates.map((p, i) => (
         <Plate key={i} plate={p} size={size} showText={showText} handlePlates={handlePlates} />
       ))}
     </StyledPlates>
 
-    <Letters handleLetter={handleLetter} letter={letter}/>
 
   </>
   )
