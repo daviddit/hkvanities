@@ -16,7 +16,7 @@ import Loading from '../loading'
   let random = plates.slice() // clone array
 	
   const pixPerPage = 20
-  const timeToChange = 1500
+  const timeToChange = 1000
 
 React.useEffect(() => {
 
@@ -33,7 +33,8 @@ React.useEffect(() => {
 
    setRandomTimes(randomTimes+1)
 
-  }, timeToChange+(randomTimes*10)); // increases time to refresh, the more the time spends on the page the more to reload (to avoid fetching forever)
+  //}, timeToChange+(randomTimes*10)); // increases time to refresh, the more the time spends on the page the more to reload (to avoid fetching forever)
+  }, timeToChange); 
 
  return () => clearInterval(id);
 })
