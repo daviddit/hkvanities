@@ -68,6 +68,9 @@ function randomPlate(randomSlice,random)
 	//console.log(newRandom)
 	newRandom[randomSliceRand] = newItem;
 	//console.log(newRandom)
+	
+	//console.log('SET: ',new Set(newRandom).size !== newRandom.length) // avoid duplicate plates on same screen
 
-	return newRandom 
+	//return newRandom 
+	return new Set(newRandom).size !== newRandom.length ? randomPlate(randomSlice,random) : newRandom 
 }
