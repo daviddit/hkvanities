@@ -24,16 +24,32 @@ if(nohover)
 }
 
   const handleMouseLeave = () => {
-	  //console.log('over','false')
+	  //console.log('leave => over:','false')
 	setOver(false)
   }
 
 
   const handleMouseEnter = () => {
-	  //console.log('over','true')
+	  //console.log('enter => over:','true')
 	setOver(true)
   }
 
+
+
+   let addImgSize = '8rem'
+
+   if(showText) 
+   {
+	switch(size)
+	   {
+		   case 'S': addImgSize = '3rem'; break;
+		   case 'L': addImgSize = '8rem'; break;
+		   default: addImgSize = '6rem'
+	   }
+   }
+
+
+    //width: ${props => props.addImgSize == "S" ? '3rem' : '8rem'};
 
 
   return (
@@ -41,8 +57,8 @@ if(nohover)
       <StyledPlateFigure>
 	  <StyledPlateImageContainer>
 	  { !showText && (<StyledPlateImage draggable={draggable} nohover={nohover} size={size} src={plate.thumbnail} alt={plate.text} /> )  }
-	  { showText && (<StyledPlateText size={size}>({plate.text.split(" ").join("")})</StyledPlateText>) }
-	  { handlePlates && (<StyledAddPlate size={size} src={plate.thumbnail} alt={plate.text} over={over} onClick={handlePlates.bind(this,plate)}><img src="/static/img/add.svg"/></StyledAddPlate>)}
+	  { showText && (<StyledPlateText size={size} over={over}>({plate.text.split(" ").join("")})</StyledPlateText>) }
+	  { handlePlates && (<StyledAddPlate addImgSize={addImgSize} src={plate.thumbnail} alt={plate.text} over={over} showText={showText} onClick={handlePlates.bind(this,plate)}><img src="/static/img/add.svg"/></StyledAddPlate>)}
 	  </StyledPlateImageContainer>
 	  { !showText && (<StyledPlateCaption>{plate.text}</StyledPlateCaption>) }
       </StyledPlateFigure>

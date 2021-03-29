@@ -51,7 +51,7 @@ export const StyledPlateCaption = styled.figcaption`
 
 export const StyledPlateText = styled.div`
   background-color: hsl(46, 100%, 50%);
-  font-family: 'HKVPlatesWhite-Regular';
+  font-family: ${props => props.over ? 'HKVPlatesBlack-Regular' : 'HKVPlatesWhite-Regular' };
   text-transform: uppercase;
   font-size: 4rem;
   margin: 0.2rem;
@@ -77,11 +77,6 @@ export const StyledPlateText = styled.div`
   ${props => props.size == "L" ? 'line-height: 16rem' : null};
   margin: 0rem;
   }
-
-   &:hover
-   {
-    font-family: 'HKVPlatesBlack-Regular';
-   }
 `
 
 export const StyledAddPlate = styled.div`
@@ -94,11 +89,12 @@ export const StyledAddPlate = styled.div`
   position: absolute;
   //z-index: 1505;
   cursor: pointer;
-  transition: opacity .5s ease-in-out;
+  transition: opacity .1s ease-in-out;
   transform: translate(50%,-50%);
 
   & img
   {
-    width:  ${props => props.size == "S" ? '3rem' : '8rem'};
+    width: ${props => props.addImgSize};
+    //width: ${props => props.addImgSize == "S" ? '3rem' : '8rem'};
   }
 `
