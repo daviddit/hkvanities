@@ -49,11 +49,9 @@ export default function SeeId({ ...props }){
       {( poem && <Poem poem={poem} showTitle autoPlay handleMouseEnter={handleMouseEnter} handleMouseOut={handleMouseOut} />)}
     </PoemContainer>
       <ControlsContainer>
-        <Control href={prevPrev}>&#8647;</Control>
         <Control href={prev}>&larr;</Control>
         <Control href={rand}>{currentPage}</Control>
         <Control href={next}>&rarr;</Control>
-        <Control href={nextNext}>&#8649;</Control>
       </ControlsContainer>
     <ButtonsContainer>
 	  { poem && <PublishControls controls="false" autoPlay="true" noSave noBack url={url} text={poem.text} video={poem.video} thumb={poem.thumb} /> }
