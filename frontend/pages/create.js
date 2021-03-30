@@ -4,6 +4,7 @@ import { useRouter } from 'next/router'
 import Composer from '../components/composer'
 import Plates from '../components/plates'
 import { v4 as uuid } from 'uuid'
+import ScrollToTop from "react-scroll-to-top";
 
 export default function Create() {
   const [plateSize, setPlateSize] = React.useState('M')
@@ -65,6 +66,7 @@ export default function Create() {
     <div>
       <Composer showText={showText} size={plateSize} handlePlateSize={handlePlateSize} plates={plates} setPlates={setPlates} handleShowText={handleShowText} handlePlates={handlePlates} />
       <Plates size={plateSize} showText={showText} handlePlates={handlePlates} />
+      <ScrollToTop smooth />
     </div>
 )
 }
