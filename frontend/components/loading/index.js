@@ -12,7 +12,7 @@ React.useEffect(() => {
 router.prefetch('/home');
 router.prefetch('/see');
 
-setTimeout(() => { router.push('/home') }, time)
+//setTimeout(() => { router.push('/home') }, time)
 
 }, [])
 

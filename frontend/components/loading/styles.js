@@ -36,4 +36,9 @@ export const StyledLoadingHeader = styled.h1`
     font-size: 20rem;
     top: 50%;
   }
+
+  & a
+  {
+   color: black;
+  }
 `
