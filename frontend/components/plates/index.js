@@ -94,6 +94,7 @@ export default function Plates({size, showText, handlePlates }) {
       ))}
     </StyledPlates>
 
+    <Letters handleLetter={handleLetter} letter={letter}/>
 
   </>
   )

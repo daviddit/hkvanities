@@ -12,7 +12,11 @@ export const StyledPlates = styled.section`
 
   @media ${device.laptop} {
   padding: 2rem ;
-  //justify-content: space-between;
-  justify-content: flex-start;
+
+  &:after
+	{
+	 content: '';
+	 flex: auto;
+	}
   }
 `
