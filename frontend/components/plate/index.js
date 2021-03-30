@@ -47,7 +47,15 @@ if(nohover)
 		   default: addImgSize = '6rem'
 	   }
    }
+ 
 
+/*
+  const handleScroll = () => {setOver(false)}
+  React.useEffect(() => {
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+   });
+*/
 
     //width: ${props => props.addImgSize == "S" ? '3rem' : '8rem'};
 
@@ -55,7 +63,7 @@ if(nohover)
   return (
      <StyledPlate innerRef={drag} size={size} onContextMenu={(e) => e.preventDefault() } onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
       <StyledPlateFigure>
-	  <StyledPlateImageContainer>
+	  <StyledPlateImageContainer over={over}>
 	  { !showText && (<StyledPlateImage draggable={draggable} nohover={nohover} size={size} src={plate.thumbnail} alt={plate.text} /> )  }
 	  { showText && (<StyledPlateText size={size} over={over}>({plate.text.split(" ").join("")})</StyledPlateText>) }
 	  { handlePlates && (<StyledAddPlate addImgSize={addImgSize} src={plate.thumbnail} alt={plate.text} over={over} showText={showText} onClick={handlePlates.bind(this,plate)}><img src="/static/img/add.svg"/></StyledAddPlate>)}

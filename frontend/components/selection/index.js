@@ -64,6 +64,14 @@ const router = useRouter()
     setPlates(newPlates)
   }
 
+ const handlePrevPlate = (index) => {
+  handleMove(plates[index], index, index-1)
+ }
+
+ const handleNextPlate = (index) => {
+  handleMove(plates[index], index, index+1)
+ }
+
   return (
     <React.Fragment>
       <StyledSelection id="StyledSelection">
@@ -71,7 +79,7 @@ const router = useRouter()
           {plates.length ? (
             <React.Fragment>
               {plates.map((plate, i) => (
-                <SelectionPlate key={plate.id} index={i} onMove={handleMove} onRemove={handleRemove} dropable plate={plate}/>
+                <SelectionPlate key={plate.id} index={i} plates={plates} onMove={handleMove} onRemove={handleRemove} handlePrevPlate={handlePrevPlate} handleNextPlate={handleNextPlate} dropable plate={plate}/>
               ))}
               <StyledDropZone id="dropZone" innerRef={drop} active={canDrop}></StyledDropZone>
             </React.Fragment>

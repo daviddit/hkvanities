@@ -5,14 +5,13 @@ export const StyledHeader = styled.header`
   display: flex;
   flex-wrap: wrap;
   margin: 0;
-  position: -webkit-sticky;
   position: sticky;
   top: 0;
   background-color: white;
   box-shadow: 0px 0.5rem 1rem lightgrey;
   width: 100vw;
   max-width: 100%;
-  z-index: ${props => props.state ? "3000" : "500"  };
+  z-index: ${props => props.state ? "2000" : "auto"  };
 
   @media ${device.laptop} {
     position: static;

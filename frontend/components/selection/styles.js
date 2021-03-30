@@ -44,7 +44,7 @@ export const StyledSelectionPlate = styled.article`
 `
 
 export const StyledDropZone = styled.div`
-  margin: 2rem 1rem .5rem 0;
+  margin: 2rem 1rem .5rem 1rem;
   /*
   width: calc(((100vw - 5rem) / 4) - 5rem);
   height: calc(((100vw - 5rem) / 4) - 5rem);

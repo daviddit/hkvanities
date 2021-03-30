@@ -83,13 +83,14 @@ export const StyledAddPlate = styled.div`
   padding: 0;
   top: 50%;
   right: 50%;
-  opacity: ${props => props.over ? 0.95 : 0 };
+  //opacity: ${props => props.over ? 0.95 : 0 };
+  display: ${props => props.over ? 'block' : 'none' };
   //background-color: white;
   //display: ${props => props.over ? 'block' : 'none' };
   position: absolute;
   //z-index: 1505;
   cursor: pointer;
-  transition: opacity .1s ease-in-out;
+  //transition: opacity .1s ease-in-out;
   transform: translate(50%,-50%);
 
   & img

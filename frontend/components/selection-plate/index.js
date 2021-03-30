@@ -3,10 +3,10 @@ import styled from 'styled-components'
 import { useDrag, useDrop } from 'react-dnd';
 import { TouchBackend } from 'react-dnd-touch-backend'
 import { ItemTypes } from '../../lib/ItemTypes';
-import { StyledSelectionPlate, StyledSelectionImage, StyledSelectionCaption, StyledDeletePlate } from './styles'
+import { StyledSelectionPlate, StyledSelectionImage, StyledSelectionCaption, StyledDeletePlate, StyledNextPlate, StyledPrevPlate } from './styles'
 import Cancel from '@material-ui/icons/Cancel';
 
-const SelctionPlate = ({ index, plate, onMove, onRemove }) => {
+const SelectionPlate = ({ index, plate, plates, onMove, onRemove, handlePrevPlate, handleNextPlate }) => {
   const ref = React.useRef()
   const [over,setOver] =  React.useState(false)
 
@@ -69,10 +69,12 @@ const SelctionPlate = ({ index, plate, onMove, onRemove }) => {
   return (
     <StyledSelectionPlate innerRef={ref} data-handler-id={handlerId} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}  onContextMenu={(e) => e.preventDefault()}>
       <StyledDeletePlate src={plate.thumbnail} alt={plate.text} over={over} onClick={onDelete.bind(this,index)}><img src="/static/img/delete.svg"/></StyledDeletePlate>
+          { index < plates.length-1 && (<StyledNextPlate src={plate.thumbnail} alt={plate.text} over={over} onClick={handleNextPlate.bind(this,index)}><img src="/static/img/prev.svg"/></StyledNextPlate>)}
+	  { index > 0 && (<StyledPrevPlate src={plate.thumbnail} alt={plate.text} over={over} onClick={handlePrevPlate.bind(this,index)}><img src="/static/img/next.svg"/></StyledPrevPlate>)}
       <StyledSelectionImage src={plate.thumbnail} alt={plate.text}/>
         <StyledSelectionCaption>{plate.text}</StyledSelectionCaption>
     </StyledSelectionPlate>
   )
 }
 
-export default SelctionPlate
+export default SelectionPlate
