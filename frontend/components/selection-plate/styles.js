@@ -65,10 +65,6 @@ export const StyledNextPlate = styled.div`
   transition: opacity .5s ease-in-out;
   transform: translateY(-2rem);
 
-  @media ${device.laptop} {
-   right: -1.5rem;
-  }
-
 
   & img
   {
@@ -89,10 +85,6 @@ export const StyledPrevPlate = styled.div`
   cursor: pointer;
   transition: opacity .5s ease-in-out;
   transform: translateY(-2rem);
-
-  @media ${device.laptop} {
-   left: -1.5rem;
-  }
 
 
   & img
