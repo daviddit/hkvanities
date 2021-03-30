@@ -47,7 +47,6 @@ const SelectionPlate = ({ index, plate, plates, onMove, onRemove, handlePrevPlat
    },
   });
 
-  drop(drag(ref))
 
   const handleMouseLeave = () => {
 	setOver(false)
@@ -63,15 +62,21 @@ const SelectionPlate = ({ index, plate, plates, onMove, onRemove, handlePrevPlat
 	onRemove(i)
   }
 
+//TODO: test to deactivate drag and drop
+let draggable = "false"
+// ref = null
+//<StyledSelectionPlate innerRef={ref} data-handler-id={handlerId} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}  onContextMenu={(e) => e.preventDefault()}>
+
+drop(drag(ref))
 
      // <StyledDeletePlate src={plate.thumbnail} alt={plate.text} over={over} onClick={onDelete.bind(this,index)}><Cancel style={{fontSize: '4rem', fill: 'black' }}/></StyledDeletePlate>
 
   return (
-    <StyledSelectionPlate innerRef={ref} data-handler-id={handlerId} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}  onContextMenu={(e) => e.preventDefault()}>
-      <StyledDeletePlate src={plate.thumbnail} alt={plate.text} over={over} onClick={onDelete.bind(this,index)}><img src="/static/img/delete.svg"/></StyledDeletePlate>
-          { index < plates.length-1 && (<StyledNextPlate src={plate.thumbnail} alt={plate.text} over={over} onClick={handleNextPlate.bind(this,index)}><img src="/static/img/prev.svg"/></StyledNextPlate>)}
-	  { index > 0 && (<StyledPrevPlate src={plate.thumbnail} alt={plate.text} over={over} onClick={handlePrevPlate.bind(this,index)}><img src="/static/img/next.svg"/></StyledPrevPlate>)}
-      <StyledSelectionImage src={plate.thumbnail} alt={plate.text}/>
+    <StyledSelectionPlate innerRef={null} data-handler-id={handlerId} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}  onContextMenu={(e) => e.preventDefault()}>
+      <StyledDeletePlate src={plate.thumbnail} alt={plate.text} over={over} onClick={onDelete.bind(this,index)}><img src="/static/img/delete.svg" draggable="false"/></StyledDeletePlate>
+          { index < plates.length-1 && (<StyledNextPlate src={plate.thumbnail} alt={plate.text} over={over} onClick={handleNextPlate.bind(this,index)}><img src="/static/img/prev.svg" draggable="false"/></StyledNextPlate>)}
+	  { index > 0 && (<StyledPrevPlate src={plate.thumbnail} alt={plate.text} over={over} onClick={handlePrevPlate.bind(this,index)}><img src="/static/img/next.svg" draggable="false"/></StyledPrevPlate>)}
+      <StyledSelectionImage src={plate.thumbnail} alt={plate.text} draggable={draggable}/>
         <StyledSelectionCaption>{plate.text}</StyledSelectionCaption>
     </StyledSelectionPlate>
   )
