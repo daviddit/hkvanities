@@ -53,10 +53,10 @@ export const StyledPlateText = styled.div`
   background-color: hsl(46, 100%, 50%);
   font-family: ${props => props.over ? 'HKVPlatesBlack-Regular' : 'HKVPlatesWhite-Regular' };
   text-transform: uppercase;
-  font-size: 4rem;
+  font-size: 4.8rem;
   margin: 0.2rem;
   display: inline;
-  line-height: 4.5rem;
+  line-height: 6rem;
   color: black;
   letter-spacing: .6px;
     -webkit-touch-callout: none;
@@ -70,10 +70,12 @@ export const StyledPlateText = styled.div`
   @media ${device.laptop} {
   font-size: 10rem;
   ${props => props.size == "S" ? 'font-size: 5rem' : null};
-  ${props => props.size == "M" ? 'font-size: 10rem' : null};
-  ${props => props.size == "L" ? 'font-size: 15rem' : null};
   ${props => props.size == "S" ? 'line-height: 4.5rem' : null};
+
+  ${props => props.size == "M" ? 'font-size: 10rem' : null};
   ${props => props.size == "M" ? 'line-height: 10.5rem' : null};
+
+  ${props => props.size == "L" ? 'font-size: 15rem' : null};
   ${props => props.size == "L" ? 'line-height: 16rem' : null};
   margin: 0rem;
   }
@@ -95,7 +97,14 @@ export const StyledAddPlate = styled.div`
 
   & img
   {
-    width: ${props => props.addImgSize};
+    ${props => props.showText ? 'width: 3.5rem;' : props.addImgSize };
     //width: ${props => props.addImgSize == "S" ? '3rem' : '8rem'};
+  }
+
+  @media ${device.laptop} {
+   & img
+   {
+    width: ${props => props.addImgSize};
+   }
   }
 `

@@ -43,11 +43,11 @@ if(nohover)
    if(showText) 
    {
 	switch(size)
-	   {
-		   case 'S': addImgSize = '3rem'; break;
-		   case 'L': addImgSize = '8rem'; break;
-		   default: addImgSize = '6rem'
-	   }
+	{
+		case 'S': addImgSize = '3rem'; break;
+		case 'L': addImgSize = '8rem'; break;
+		default: addImgSize = '6rem'
+	}
    }
  
 
