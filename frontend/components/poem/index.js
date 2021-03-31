@@ -1,3 +1,4 @@
+import React, { useRef, useEffect } from "react";
 import Link from 'next/link'
 import styled from 'styled-components'
 import { StyledPoemFigure, StyledPoem, StyledPoemCaption } from './styles'
@@ -7,26 +8,48 @@ import Head from 'next/head'
 
 
 const Poem = ({ poem, controls, autoPlay, showTitle }) => {
+ const refVideo = useRef(null);
 
  const autoplay = autoPlay ? true : null
  const preload = autoPlay ? null : "metadata"
 
  const handleMouseEnter = (e) => 
-{
-	if(!autoplay)
-	{
-		e.target.play()
-	}
-}
-
- const handleMouseOut = (e) => 
  {
-	if(!autoplay)
-	{
-	     e.target.pause()
-	     e.target.currentTime = 0
-	}
+  	if(!autoplay)
+ 	{
+ 		e.target.play()
+ 	}
  }
+ 
+  const handleMouseOut = (e) => 
+  {
+	if(!autoplay)
+ 	{
+ 	     e.target.pause()
+ 	     e.target.currentTime = 0
+ 	}
+  }
+
+
+
+	// iphone workaround to allow autoplay
+  useEffect(() => {
+       if (!refVideo.current || ! poem.video) {
+            return;
+       }
+
+       //if (isMuted) {
+           //open bug since 2017 that you cannot set muted in video element https://github.com/facebook/react/issues/10389
+           refVideo.current.defaultMuted = true;
+           ////console.log('muted 1',refVideo.current.defaultMuted);
+           refVideo.current.muted = true;
+           //console.log('muted 2',refVideo.current.muted);
+       //}
+
+       refVideo.current.srcObject = poem.video;
+  }, [poem.video]);
+
+
 
   const url = poem.slug ? hostname + poem.slug.replace('/ /g','%2520') : poem.url
   const url_img = hostname + poem.thumb.replace('/ /g','%2520')
@@ -52,11 +75,12 @@ const Poem = ({ poem, controls, autoPlay, showTitle }) => {
 	<meta name="twitter:card" content="summary_large_image" />
     </Head>
     <StyledPoem id={poem.text}
+	        ref={refVideo}
 	  	key={poem.video}
 		preload={preload}
 	  	controls={controls}
 	  	autoPlay={autoplay}
-	  	playsInline={autoplay}
+	  	playsInline="true"
 	  	muted
 	  	loop
 	  	ratio="1:1"
