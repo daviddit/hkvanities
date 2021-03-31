@@ -12,6 +12,7 @@ export const StyledPlates = styled.section`
 
   @media ${device.laptop} {
   padding: 2rem ;
+  padding-right: 1rem ;
 
   &:after
 	{

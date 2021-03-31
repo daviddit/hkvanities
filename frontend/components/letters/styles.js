@@ -7,11 +7,14 @@ export const StyledLetters = styled.section`
   justify-content: flex-start;
   flex-wrap: wrap;
   flex-direction: row;
-  margin-left: 2rem;
-  margin-right 3rem;
+  margin-left: 1rem;
+  margin-right 1rem;
   margin-top: 2rem;
 
   @media ${device.laptop} {
+  margin-left: 2rem;
+  margin-right 2rem;
+  margin-top: 2rem;
   justify-content: space-between;
   }
 `
