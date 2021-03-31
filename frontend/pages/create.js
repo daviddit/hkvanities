@@ -28,6 +28,11 @@ export default function Create() {
      item.value = item 
    }
 
+
+    // that's  in order to scroll down only after the new plate is added
+    Promise.resolve()
+      .then(() => { 
+
       setPlates([
         ...plates,
         {
@@ -36,6 +41,8 @@ export default function Create() {
         }
       ])
 
+      })
+      .then(() => scrollToBottom ('StyledSelection'))
 
    }
 
@@ -56,11 +63,6 @@ export default function Create() {
           div.scrollTop = div.scrollHeight
 	  //console.log(2,div.scrollTop)
   }
-
-
-  React.useEffect(() => {
-    scrollToBottom ('StyledSelection') 
-  }, [plates])
 
  return (
     <div>
