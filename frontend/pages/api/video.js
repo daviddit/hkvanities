@@ -13,6 +13,7 @@ const tmpDir = './tmp'
 const outDir = './static/out'
 const poemsDir = './static/poems'
 const platesDir = './static/plates/thumbnails'
+const portrait = './static/img/portrait.jpg'
 const plateToPath = (plate) => path.join(platesDir, `${plate}.jpg`)
 
 export default async function handler(req, res) {
@@ -96,6 +97,8 @@ const jpgsToMp4 = async (imgs, opts) => {
   try {
     let i = 1;
 
+    fs.copyFile(portrait, path.join(outDir, `0.jpg`))
+
     const thumb = path.join(outDir, `${i}.jpg`)
 
     for (const img of imgs) {
@@ -162,6 +165,9 @@ const jpgsToMp4 = async (imgs, opts) => {
     await sspawn("sleep", ["1"], {})
     const clean = async () => {
 	    let i = 1;
+
+	    await fs.unlink(path.join(outDir, `0.jpg`)); // portrait
+
 	    for (const img of imgs) {
 
 	      //console.log(i , " delete ", path.join(outDir, `${i}.jpg`))
