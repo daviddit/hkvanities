@@ -56,6 +56,7 @@ export default function Plates({size, showText, handlePlates }) {
   }
 
   const handleLetter = (l) => {
+	window.scrollTo(0,0); // scroll to top on every letter change
 	setLetter(l)
   }
 
