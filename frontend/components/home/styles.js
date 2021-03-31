@@ -5,6 +5,6 @@ export const HomeStyled = styled.div`
   padding: 0 1rem;
 
   @media ${device.laptop} {
-  padding: 0 2rem;
+  padding: 0 1rem;
   }
 `

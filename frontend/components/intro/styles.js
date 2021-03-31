@@ -10,7 +10,7 @@ export const StyledIntro = styled.p`
   @media ${device.laptop} {
     font-size: 3rem;
     line-height: 3rem;
-    margin: 7rem auto 4rem auto;
+    margin: 7rem 1rem 4rem auto;
     text-align: left;
   }
 `
