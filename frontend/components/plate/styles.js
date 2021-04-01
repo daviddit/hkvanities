@@ -59,12 +59,12 @@ export const StyledPlateText = styled.div`
   line-height: 6rem;
   color: black;
   letter-spacing: .6px;
-    -webkit-touch-callout: none;
-    -webkit-user-select: none;
-    -khtml-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 
 
   @media ${device.laptop} {
@@ -78,6 +78,21 @@ export const StyledPlateText = styled.div`
   ${props => props.size == "L" ? 'font-size: 15rem' : null};
   ${props => props.size == "L" ? 'line-height: 16rem' : null};
   margin: 0rem;
+  }
+
+// trick to avoid div displacement on font change
+  &:after
+  {
+   content: '';
+   font-family: "HKVPlatesWhite-Regular";
+   visibility: hidden;
+  }
+
+  &:before
+  {
+   content: '';
+   font-family: "HKVPlatesBlack-Regular";
+   visibility: hidden;
   }
 `
 
