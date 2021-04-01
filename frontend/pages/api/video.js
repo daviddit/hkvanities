@@ -111,6 +111,8 @@ const jpgsToMp4 = async (imgs, opts) => {
 
 	  try {
     	      fs.copyFile(portrait, path.join(outDir, `${i}.jpg`))
+      	      i++;
+    	      fs.copyFile(portrait, path.join(outDir, `${i}.jpg`))
 	  } catch (err) {
 	      throw err;
 	}
@@ -180,6 +182,8 @@ const jpgsToMp4 = async (imgs, opts) => {
 	      i++;
 	    }
 
+      await fs.unlink(path.join(outDir, `${i}.jpg`)); // portrait
+      i++;
       await fs.unlink(path.join(outDir, `${i}.jpg`)); // portrait
 
       await fs.unlink(outFile)
