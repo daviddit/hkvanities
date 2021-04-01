@@ -97,8 +97,6 @@ const jpgsToMp4 = async (imgs, opts) => {
   try {
     let i = 1;
 
-    fs.copyFile(portrait, path.join(outDir, `0.jpg`))
-
     const thumb = path.join(outDir, `${i}.jpg`)
 
     for (const img of imgs) {
@@ -110,6 +108,14 @@ const jpgsToMp4 = async (imgs, opts) => {
 	}
       i++;
     }
+
+	  try {
+    	      fs.copyFile(portrait, path.join(outDir, `${i}.jpg`))
+	  } catch (err) {
+	      throw err;
+	}
+
+
 //    sspawn(
 //      "ffmpeg",
 //      [
@@ -137,7 +143,7 @@ const jpgsToMp4 = async (imgs, opts) => {
       [
         "-y",
         "-r:v",
-        "1",
+        "0.75",
         "-pattern_type",
         "glob",
         "-i",
@@ -166,8 +172,6 @@ const jpgsToMp4 = async (imgs, opts) => {
     const clean = async () => {
 	    let i = 1;
 
-	    await fs.unlink(path.join(outDir, `0.jpg`)); // portrait
-
 	    for (const img of imgs) {
 
 	      //console.log(i , " delete ", path.join(outDir, `${i}.jpg`))
@@ -175,6 +179,9 @@ const jpgsToMp4 = async (imgs, opts) => {
 	      await fs.unlink(path.join(outDir, `${i}.jpg`));
 	      i++;
 	    }
+
+      await fs.unlink(path.join(outDir, `${i}.jpg`)); // portrait
+
       await fs.unlink(outFile)
       //console.log(" delete outfile:", outFile)
       await fs.rmdir(outDir)
