@@ -2,7 +2,7 @@ import styled from 'styled-components'
 import { device } from '../../lib/device'
 
 export const StyledSelectionPlate = styled.article`
-  margin: 2rem 1rem .5rem 1rem;
+  margin: 2rem 1rem .5rem 0;
   cursor: grab;
   position: relative;
 
@@ -56,7 +56,7 @@ export const StyledNextPlate = styled.div`
   //background-color: white;
   //border-radius: 100%;
   top: 50%;
-  right: -1rem;
+  right: -0.5rem;
   opacity: ${props => props.over ? 1 : 0 };
   position: absolute;
   //display: ${props => props.over ? 'block' : 'none' };
@@ -77,7 +77,7 @@ export const StyledPrevPlate = styled.div`
   //background-color: white;
   //border-radius: 100%;
   top: 50%;
-  left: -1rem;
+  left: -0.5rem;
   opacity: ${props => props.over ? 1 : 0 };
   position: absolute;
   //display: ${props => props.over ? 'block' : 'none' };

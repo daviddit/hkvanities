@@ -44,17 +44,11 @@ export const StyledSelectionPlate = styled.article`
 `
 
 export const StyledDropZone = styled.div`
-  margin: 2rem 1rem .5rem 1rem;
-  /*
-  width: calc(((100vw - 5rem) / 4) - 5rem);
-  height: calc(((100vw - 5rem) / 4) - 5rem);
-  max-width: 10rem;
-  max-height: 10rem;
-  */
-    width:  calc(((100vw - 3rem) / 3) - 2rem);
-    height: calc(((100vw - 3rem) / 3) - 2rem);
-    max-width: 15rem;
-    max-height: 15rem;
+  margin: 2rem 1rem .5rem 0;
+  width:  calc(((100vw - 3rem) / 3) - 2rem);
+  height: calc(((100vw - 3rem) / 3) - 2rem);
+  max-width: 15rem;
+  max-height: 15rem;
   //background: ${props => props.active ? 'hsl(46, 100%, 50%)' : 'transparent'};
   //background: lightgrey;
   background: url('/static/img/drop.svg') center;
@@ -62,15 +56,6 @@ export const StyledDropZone = styled.div`
   display: flex;
   text-align: center;
   position: relative;
-
-/*
-  @media ${device.mobile} {
-    width:  calc(((100vw - 3rem) / 3) - 2rem);
-    height: calc(((100vw - 3rem) / 3) - 2rem);
-    max-width: 15rem;
-    max-height: 15rem;
-  }
-*/
 
   @media ${device.laptop} {
     width: calc(((100vw - 5rem) / 4) - 5rem);
