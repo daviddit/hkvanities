@@ -1,6 +1,6 @@
 import React from 'react'
 import Loading from '../components/loading'
-import WebMetadata from '../webmetadata'
+import WebMetadata from '../components/webmetadata'
 
 export default function Welcome() {
 
