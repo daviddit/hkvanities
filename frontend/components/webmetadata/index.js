@@ -1,5 +1,5 @@
 import Head from 'next/head'
-import { hostname, site_name } from '../../config.js'
+import { hostname, site_name, site_description } from '../../config.js'
 
 const url = hostname
 const url_img = hostname + "/static/img/web_portrait.jpg"
@@ -9,7 +9,7 @@ const WebMetadata = props => (
 	<meta name="og:locale" content="en_HK" />
 	<meta name="og:type" content="website" />
 	<meta name="og:title" content={site_name} />
-	<meta name="og:description" content="" />
+	<meta name="og:description" content="{site_description}" />
 	<meta name="og:url" content={url} />
 	<meta name="og:site_name" content="{site_name}" />
 	<meta name="og:image" content={url_img} />
