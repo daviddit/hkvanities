@@ -10,5 +10,4 @@ export const perPage = 18;
 
 export const GA_TRACKING_ID = `UA-193117145-1`
 
-
 export const site_description = "The Hong Kong Vanities project is a poetic exploration of Hong Kong"

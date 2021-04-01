@@ -9,9 +9,9 @@ const WebMetadata = props => (
 	<meta name="og:locale" content="en_HK" />
 	<meta name="og:type" content="website" />
 	<meta name="og:title" content={site_name} />
-	<meta name="og:description" content="{site_description}" />
+	<meta name="og:description" content={site_description} />
 	<meta name="og:url" content={url} />
-	<meta name="og:site_name" content="{site_name}" />
+	<meta name="og:site_name" content={site_name} />
 	<meta name="og:image" content={url_img} />
 	<meta name="og:image:width" content="600" />
 	<meta name="og:image:height" content="600" />
