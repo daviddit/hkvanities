@@ -4,9 +4,11 @@ import { device } from '../../lib/device'
 const size = '5rem'
 
 export const StyledSelection = styled.section`
-  margin: 2rem 0;
+  margin: ${props => props.slide ?  '2rem 0' : '0'} ;
   overflow: auto;
-  max-height: calc((((100vw - 1rem) / 3) + 1rem) * 2 ) ;
+
+  max-height: ${props => props.slide ?  'calc((((100vw - 1rem) / 3) + 1rem) * 2 )' : '0'} ;
+  //max-height: calc((((100vw - 1rem) / 3) + 1rem) * 2 ) ;
 
     @media ${device.laptop} {
       max-height: calc(((((100vw - 8rem) / 8)) * 2 ) + 3rem);
@@ -65,22 +67,6 @@ export const StyledDropZone = styled.div`
   }
 
 `
-
-/*
-export const StyledDropZoneInner = styled.div`
- border: 2px solid pink;
- position: absolute;
- top: 50%;
- left: 50%;
- transform: translate(-50%,-50%);
- font-size: 16px;
-
-  @media ${device.laptop} {
-    justify-content: space-between;
-    font-size: 25px;
-  }
-`
-*/
 
 export const StyledPlaceholderDropZone = styled.div`
   @media ${device.laptop} {

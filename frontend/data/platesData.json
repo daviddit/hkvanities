@@ -320,9 +320,9 @@
   "thumbnail": "/static/plates/thumbnails/ANSWER.jpg"
  },
  {
-  "text": "ANT.jpg",
-  "image": "/static/plates/ANT.jpg.jpg",
-  "thumbnail": "/static/plates/thumbnails/ANT.jpg.jpg"
+  "text": "ANT",
+  "image": "/static/plates/ANT.jpg",
+  "thumbnail": "/static/plates/thumbnails/ANT.jpg"
  },
  {
   "text": "ANTS CAR",

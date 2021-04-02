@@ -59,7 +59,10 @@ if(nohover)
    });
 */
 
-    //width: ${props => props.addImgSize == "S" ? '3rem' : '8rem'};
+  const handleClick= (t,plate) => {
+	handlePlates(t,plate)
+	setOver(false)
+  }
 
 
   return (
@@ -68,7 +71,7 @@ if(nohover)
 	  <StyledPlateImageContainer over={over}>
 	  { !showText && (<StyledPlateImage draggable={draggable} nohover={nohover} size={size} src={plate.thumbnail} alt={plate.text} /> )  }
 	  { showText && (<StyledPlateText size={size} over={over}>({plate.text.split(" ").join("")})</StyledPlateText>) }
-	  { handlePlates && (<StyledAddPlate addImgSize={addImgSize} src={plate.thumbnail} alt={plate.text} over={over} showText={showText} onClick={handlePlates.bind(this,plate)}><img src="/static/img/add.svg" draggable="false" /></StyledAddPlate>)}
+	  { handlePlates && (<StyledAddPlate addImgSize={addImgSize} src={plate.thumbnail} alt={plate.text} over={over} showText={showText} onClick={handleClick.bind(this,plate)}><img src="/static/img/add.svg" draggable="false" /></StyledAddPlate>)}
 	  </StyledPlateImageContainer>
 	  { !showText && (<StyledPlateCaption>{plate.text}</StyledPlateCaption>) }
       </StyledPlateFigure>

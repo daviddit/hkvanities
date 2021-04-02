@@ -1,7 +1,9 @@
 import styled from 'styled-components'
 
 export const StyledControls = styled.nav`
-  display: flex;
+  display: ${props => props.slide ?  'flex' : 'none' };
+  //border: 1px solid pink;
+  flex-grow: 1;
   margin: 0rem 0;
   max-width: 80%;
 `

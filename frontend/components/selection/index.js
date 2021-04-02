@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState} from 'react'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import styled from 'styled-components'
@@ -9,6 +9,7 @@ import ImageControls from '../image-controls'
 import { useDrop } from 'react-dnd'
 //import AddCircleOutlineIcon from '@material-ui/icons/AddCircleOutline';
 const Selection  = ({plates, setPlates, handlePlates, showText, size, handlePlateSize, handleShowText }) => {
+const [ slide, setSlide ]  = useState(true)
 const router = useRouter()
 
   const [{ canDrop }, drop] = useDrop({
@@ -72,9 +73,13 @@ const router = useRouter()
   handleMove(plates[index], index, index+1)
  }
 
+ const handleSlide = () => {
+  setSlide(!slide) 
+ }
+
   return (
     <React.Fragment>
-      <StyledSelection id="StyledSelection">
+      <StyledSelection id="StyledSelection" slide={slide}>
         <StyledSelectionPlates>
           {plates.length ? (
             <React.Fragment>
@@ -93,8 +98,8 @@ const router = useRouter()
       </StyledSelection>
 
       <StyledSelectionControls>
-      <SelectionControls onReset={handleReset} onContinue={handleContinue} platesLength={plates.length} />
-       <ImageControls showText={showText} size={size} handlePlateSize={handlePlateSize} handleShowText={handleShowText} />
+      <SelectionControls onReset={handleReset} onContinue={handleContinue} platesLength={plates.length} slide={slide} />
+       <ImageControls showText={showText} size={size} handlePlateSize={handlePlateSize} handleShowText={handleShowText} handleSlide={handleSlide} slide={slide} />
       </StyledSelectionControls>
     </React.Fragment>
   )

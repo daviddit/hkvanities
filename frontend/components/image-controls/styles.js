@@ -4,11 +4,14 @@ import { device } from '../../lib/device'
 export const StyledImageControls = styled.nav`
   display: flex;
   margin: 0;
-  min-width: 40%;
-  //vertical-align: middle;
-  //border: 1px solid pink;
-  //justify-content: space-around;
-  justify-content: flex-end;
+  min-width: 100%;
+  justify-content: space-between;
+
+  @media ${device.laptop} {
+    //border: 1px solid pink;
+    justify-content: flex-end;
+    min-width: 20%;
+  }
 `
 
 export const StyledImageControl = styled.button`
@@ -44,15 +47,16 @@ export const StyledImageControl = styled.button`
    background-color: hsl(46,100%,50%);
   }
 
-  &:last-child //L
-  {
-   margin-right: 0;
-  }
-
   &:nth-child(3) // S
   {
    margin-left: 2rem;
   }
+
+  &:nth-child(5) // L
+  {
+   margin-right: 0;
+  }
+
 `
 
 export const StyledImageTextControl = styled.a`
@@ -94,5 +98,19 @@ export const StyledImageControlGrid = styled.a`
   display: block;
   }
 
+`
 
+export const StyledImageControlSlider = styled.button`
+  border: 1px solid white;
+  background-color: white;
+  outline: 0;
+
+  &:active
+  {
+   background-color: white;
+  }
+
+  @media ${device.laptop} {
+   display: none;
+  }
 `
