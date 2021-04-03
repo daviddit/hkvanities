@@ -21,6 +21,7 @@ var styles = {
     background: '#a90000'
   },
   bmCrossButton: {
+    position: 'fixed',
     background: 'white',
     top: 0,
     right: '10px',
