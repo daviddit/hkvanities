@@ -17,6 +17,7 @@ const Poem = ({ poem, controls, autoPlay, showTitle }) => {
  {
   	if(!autoplay)
  	{
+ 		e.target.style.opacity = 1
  		e.target.play()
  	}
  }
@@ -25,6 +26,7 @@ const Poem = ({ poem, controls, autoPlay, showTitle }) => {
   {
 	if(!autoplay)
  	{
+    	     e.target.style.opacity = 0.5
  	     e.target.pause()
  	     e.target.currentTime = 0
  	}

@@ -17,13 +17,6 @@ export const StyledPoem = styled.video`
     height: calc(((100vw - 6rem) / 4) - 2rem);
     margin: 0;
   }
-
- &:hover
- {
-  filter: blur(0);
-  opacity: 1;
- }
-
 `
 
 export const StyledPoemCaption = styled.figcaption`
