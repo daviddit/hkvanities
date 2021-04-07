@@ -90,7 +90,7 @@ const router = useRouter()
             </React.Fragment>
           ) : (
             <StyledPlaceholderDropZone innerRef={drop} active={canDrop}>
-              <StyledSelectionNote>{'Select, move the images and create your own poem, then share or save on your device.'}</StyledSelectionNote>
+              <StyledSelectionNote>{'Select, shuffle the images and create your own poem, then share or save on your device.'}</StyledSelectionNote>
               <StyledDropZone innerRef={drop} active={canDrop}></StyledDropZone>
             </StyledPlaceholderDropZone>
           )}
