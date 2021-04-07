@@ -56,8 +56,10 @@ const Poem = ({ poem, controls, autoPlay, showTitle }) => {
   const url = poem.slug ? hostname + poem.slug.replace('/ /g','%2520') : poem.url
   const url_img = hostname + poem.thumb.replace('/ /g','%2520')
   const url_video = hostname + poem.video.replace('/ /g','%2520')
+
   const poem_title = poem.text ? poem.text :  share_poem_title
-  const poem_text = poem.text ? poem.text : share_poem_text
+  const poem_text = poem.text ? '' : share_poem_text
+
 
   return (
   <StyledPoemFigure>
