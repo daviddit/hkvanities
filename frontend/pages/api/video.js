@@ -166,7 +166,7 @@ const jpgsToMp4 = async (imgs, opts) => {
         "-pix_fmt",
         "yuv420p",
         "-crf",
-        "0",
+        "28",
         "-an",
         "-movflags",
         "+faststart",
