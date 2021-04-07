@@ -28,15 +28,14 @@ return (
     <IntroVideoContainer>
     {!showVideo && (<>
 	    	    <IntroVideoImg src="/static/intro/HK%20Vanities%20feat%20DoughBoy-high.gif" onClick={handleImgClick} />
-	            <IntroVideoPlay onClick={handleImgClick}><PlayCircleOutlineIcon/></IntroVideoPlay>
 	    	    </>)}
     {showVideo && (
     <IntroVideo 
 	        ref={introVideo}
-                controls="false"
 	        autoPlay
                 playsInline="true"
           >
+      <source media="all and (min-width:768px)" src="/static/intro/HK%20Vanities%20feat%20DoughBoy%20HD.mp4" type="video/mp4"/>
       <source src="/static/intro/HK%20Vanities%20feat%20DoughBoy.mp4" type="video/mp4"/>
       Your browser does not support HTML5 video.
     </IntroVideo>)}
@@ -46,6 +45,6 @@ return (
         </>)
 }
 
-
-  //<StyledIntro>Hong Kong's vanity plates, better known locally as personalized vehicle registration marks (PVRM), are auctioned at the starting price of HK$ 5000. The poems on these platform are the result of the combination of the car plates. An archive of hundreds of pictures will inspire poems and rhymes. The poems will be shown on Instagram in an exhibition with a live performance.</StyledIntro>
+                //controls="false"
+//	            <IntroVideoPlay onClick={handleImgClick}><PlayCircleOutlineIcon/></IntroVideoPlay>
 

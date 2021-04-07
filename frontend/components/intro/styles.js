@@ -17,19 +17,22 @@ export const StyledIntro = styled.p`
 
 export const IntroVideoContainer = styled.div`
 //border: 1px solid pink;
-margin 1rem auto;
+margin: 1rem 0 1rem 0;
 position: relative;
-display: flex;
-justify-content: center;
+
+  @media ${device.laptop} {
+    margin: 0 1rem 2rem 0;
+  }
 `
 
 export const IntroVideoImg = styled.img`
  align-self: flex-start;
- max-width: 95vw;
+ width: 100%;
  min-height: auto;
+ cursor: pointer;
 `
 
-export const IntroVideoPlay = styled.div`
+export const IntroVideoPlayButton = styled.div`
  //border: 2px solid pink;
  display: flex;
  position: absolute;
@@ -59,7 +62,8 @@ export const IntroVideoPlay = styled.div`
 //display: ${props => props.showVideo ? "flex" : "none" };
 
 export const IntroVideo = styled.video`
-  max-width: 95vw;
+  //max-width: 95vw;
+  width: 100%;
   height: auto;
   //display: ${props => props.showVideo ? "block" : "none" };
   margin: 0;
