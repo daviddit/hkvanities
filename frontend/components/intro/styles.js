@@ -15,4 +15,52 @@ export const StyledIntro = styled.p`
   }
 `
 
-//max-width: 600px;
+export const IntroVideoContainer = styled.div`
+//border: 1px solid pink;
+margin 1rem auto;
+position: relative;
+display: flex;
+justify-content: center;
+
+& img
+{
+ max-width: 95vw;
+}
+
+`
+
+export const IntroVideoImg = styled.img`
+ max-width: 95vw;
+`
+
+export const IntroVideoPlay = styled.div`
+ //border: 2px solid pink;
+ display: flex;
+ position: absolute;
+ top: 50%;
+ right: 50%;
+ height: 100%;
+ align-items: center;
+ justify-content: center;
+ width: 100%;
+ transform: translate(50%,-50%);
+ cursor: pointer;
+
+ & svg
+ {
+  color: hsl(46,100%,50%);
+  font-size: 25rem;
+ }
+`
+
+//display: ${props => props.showVideo ? "flex" : "none" };
+
+export const IntroVideo = styled.video`
+  max-width: 95vw;
+  height: auto;
+  display: ${props => props.showVideo ? "block" : "none" };
+  margin: 0;
+
+  @media ${device.laptop} {
+  }
+`
