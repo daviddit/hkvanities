@@ -51,11 +51,22 @@ export const IntroVideoPlayButton = styled.div`
   font-size: 15rem;
  }
 
+ & img
+ {
+  width: 8rem;
+ }
+
   @media ${device.laptop} {
 	 & svg
 	 {
 	  font-size: 25rem;
 	 }
+
+	 & img
+	 {
+	  width: 20rem;
+	 }
+
   }
 `
 
