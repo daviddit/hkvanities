@@ -64,16 +64,13 @@ export const IntroVideoPlayButton = styled.div`
 
 	 & img
 	 {
-	  width: 20rem;
+	  width: 15rem;
 	 }
 
   }
 `
 
-//display: ${props => props.showVideo ? "flex" : "none" };
-
 export const IntroVideo = styled.video`
-  //max-width: 95vw;
   width: 100%;
   height: auto;
   //display: ${props => props.showVideo ? "block" : "none" };
