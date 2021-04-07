@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import styled from 'styled-components'
-import { StyledIntro, IntroVideoContainer, IntroVideo, IntroVideoImg, IntroVideoPlay } from './styles'
+import { StyledIntro, IntroVideoContainer, IntroVideo, IntroVideoImg, IntroVideoPlayButton } from './styles'
 import PlayCircleOutlineIcon from '@material-ui/icons/PlayCircleOutline';
 
 /*
@@ -28,6 +28,7 @@ return (
     <IntroVideoContainer>
     {!showVideo && (<>
 	    	    <IntroVideoImg src="/static/intro/HK%20Vanities%20feat%20DoughBoy-high.gif" onClick={handleImgClick} />
+	            <IntroVideoPlayButton onClick={handleImgClick}><img src="/static/img/play.svg" /></IntroVideoPlayButton>
 	    	    </>)}
     {showVideo && (
     <IntroVideo 
@@ -46,5 +47,4 @@ return (
 }
 
                 //controls="false"
-//	            <IntroVideoPlay onClick={handleImgClick}><PlayCircleOutlineIcon/></IntroVideoPlay>
 
