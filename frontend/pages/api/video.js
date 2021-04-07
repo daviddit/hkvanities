@@ -16,6 +16,8 @@ const platesDir = './static/plates/thumbnails'
 const portrait = './static/img/portrait.jpg'
 const plateToPath = (plate) => path.join(platesDir, `${plate}.jpg`)
 
+const zeroPad = (num, places) => String(num).padStart(places, '0')
+
 export default async function handler(req, res) {
   if (req.method === 'POST') {
     const ret = await fn(req)
@@ -96,26 +98,31 @@ const jpgsToMp4 = async (imgs, opts) => {
   }
   try {
     let i = 1;
+    let ii = zeroPad(i,2)
 
-    const thumb = path.join(outDir, `${i}.jpg`)
+    const thumb = path.join(outDir, `${ii}.jpg`)
 
     for (const img of imgs) {
 	  try {
-	      //console.log(i , img , " => ", path.join(outDir, `${i}.jpg`))
-	      fs.copyFile(img, path.join(outDir, `${i}.jpg`))
+	      ii = zeroPad(i,2)
+	      console.log(i , img , " => ", path.join(outDir, `${ii}.jpg`))
+	      fs.copyFile(img, path.join(outDir, `${ii}.jpg`))
 	  } catch (err) {
 	      throw err;
 	}
       i++;
     }
 
-	  try {
-    	      fs.copyFile(portrait, path.join(outDir, `${i}.jpg`))
-      	      i++;
-    	      fs.copyFile(portrait, path.join(outDir, `${i}.jpg`))
-	  } catch (err) {
-	      throw err;
-	}
+  try {
+      ii = zeroPad(i,2)
+      console.log(i , portrait, " ==> ", path.join(outDir, `${ii}.jpg`))
+      fs.copyFile(portrait, path.join(outDir, `${ii}.jpg`))
+      ii = zeroPad(++i,2)
+      console.log(i , portrait, " ==> ", path.join(outDir, `${ii}.jpg`))
+      fs.copyFile(portrait, path.join(outDir, `${ii}.jpg`))
+  } catch (err) {
+      throw err;
+  }
 
 
 //    sspawn(
@@ -159,7 +166,7 @@ const jpgsToMp4 = async (imgs, opts) => {
         "-pix_fmt",
         "yuv420p",
         "-crf",
-        "28",
+        "0",
         "-an",
         "-movflags",
         "+faststart",
@@ -173,18 +180,19 @@ const jpgsToMp4 = async (imgs, opts) => {
     await sspawn("sleep", ["1"], {})
     const clean = async () => {
 	    let i = 1;
+	    let ii;
 
 	    for (const img of imgs) {
 
-	      //console.log(i , " delete ", path.join(outDir, `${i}.jpg`))
-
-	      await fs.unlink(path.join(outDir, `${i}.jpg`));
+	      ii = zeroPad(i,2)
+	      await fs.unlink(path.join(outDir, `${ii}.jpg`));
 	      i++;
 	    }
 
-      await fs.unlink(path.join(outDir, `${i}.jpg`)); // portrait
-      i++;
-      await fs.unlink(path.join(outDir, `${i}.jpg`)); // portrait
+      ii = zeroPad(i,2)
+      await fs.unlink(path.join(outDir, `${ii}.jpg`)); // portrait
+      ii = zeroPad(++i,2)
+      await fs.unlink(path.join(outDir, `${ii}.jpg`)); // portrait
 
       await fs.unlink(outFile)
       //console.log(" delete outfile:", outFile)
