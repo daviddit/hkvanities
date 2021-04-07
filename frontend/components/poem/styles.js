@@ -20,7 +20,6 @@ export const StyledPoem = styled.video`
 `
 
 export const StyledPoemCaption = styled.figcaption`
-  text-transform: uppercase;
   font-size: 1.3rem;
   line-height: 1rem;
   color: black;
