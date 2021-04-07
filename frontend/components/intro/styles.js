@@ -21,16 +21,12 @@ margin 1rem auto;
 position: relative;
 display: flex;
 justify-content: center;
-
-& img
-{
- max-width: 95vw;
-}
-
 `
 
 export const IntroVideoImg = styled.img`
+ align-self: flex-start;
  max-width: 95vw;
+ min-height: auto;
 `
 
 export const IntroVideoPlay = styled.div`
@@ -49,8 +45,15 @@ export const IntroVideoPlay = styled.div`
  & svg
  {
   color: hsl(46,100%,50%);
-  font-size: 25rem;
+  font-size: 15rem;
  }
+
+  @media ${device.laptop} {
+	 & svg
+	 {
+	  font-size: 25rem;
+	 }
+  }
 `
 
 //display: ${props => props.showVideo ? "flex" : "none" };
@@ -58,7 +61,7 @@ export const IntroVideoPlay = styled.div`
 export const IntroVideo = styled.video`
   max-width: 95vw;
   height: auto;
-  display: ${props => props.showVideo ? "block" : "none" };
+  //display: ${props => props.showVideo ? "block" : "none" };
   margin: 0;
 
   @media ${device.laptop} {

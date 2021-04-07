@@ -33,8 +33,7 @@ return (
     {showVideo && (
     <IntroVideo 
 	        ref={introVideo}
-	        showVideo={showVideo} 
-                controls="controls"
+                controls="false"
 	        autoPlay
                 playsInline="true"
           >
