@@ -141,7 +141,7 @@ export default function Share({ url, video, thumb, onClick, text}) {
 }
 */
 
-  text = text ? text : "Watch the poem I've just created at "
+  text = text ? text : "Check out my HK Vanities poem "
 
 
   //const urlWeChat = "https://www.addtoany.com/add_to/wechat?linkurl=" + encodeURIComponent(url) + "&amp;linkname=" +  encodeURIComponent(text)
