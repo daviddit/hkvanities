@@ -12,5 +12,5 @@ export const GA_TRACKING_ID = `UA-193117145-1`
 
 export const site_description = "The Hong Kong Vanities project is a poetic exploration of Hong Kong"
 
-export const share_poem_title = 'Hk Vanities. Hong Kong’s poetry in motion' 
+export const share_poem_title = "HKVANIT1ES. Hong Kong's poetry in motion."
 export const share_poem_text = "Check out my HK Vanities poem"
