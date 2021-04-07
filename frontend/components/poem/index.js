@@ -3,7 +3,7 @@ import Link from 'next/link'
 import styled from 'styled-components'
 import { StyledPoemFigure, StyledPoem, StyledPoemCaption } from './styles'
 import Title from '../title'
-import { hostname, site_name } from '../../config.js'
+import { hostname, site_name, share_poem_title, share_poem_text } from '../../config.js'
 import Head from 'next/head'
 
 
@@ -56,7 +56,8 @@ const Poem = ({ poem, controls, autoPlay, showTitle }) => {
   const url = poem.slug ? hostname + poem.slug.replace('/ /g','%2520') : poem.url
   const url_img = hostname + poem.thumb.replace('/ /g','%2520')
   const url_video = hostname + poem.video.replace('/ /g','%2520')
-  const poem_text = poem.text ? poem.text : 'HKVANIT1ES Poem' 
+  const poem_title = poem.text ? poem.text :  share_poem_title
+  const poem_text = poem.text ? poem.text : share_poem_text
 
   return (
   <StyledPoemFigure>
@@ -64,8 +65,8 @@ const Poem = ({ poem, controls, autoPlay, showTitle }) => {
 	{ showTitle && (<Title title={poem_text}/>)}
 	<meta name="og:locale" content="en_HK" />
 	<meta name="og:type" content="video.other" />
-	<meta name="og:title" content={poem_text} />
-	<meta name="og:description" content="" />
+	<meta name="og:title" content={poem_title} />
+	<meta name="og:description" content={poem_text} />
 	<meta name="og:url" content={url} />
 	<meta name="og:site_name" content="{site_name}" />
 	<meta name="og:image" content={url_img} />

@@ -13,7 +13,7 @@ import ShareIcon from '@material-ui/icons/Share';
 import { device } from '../../lib/device'
 import { Icon, InlineIcon } from '@iconify/react';
 import wechatIcon from '@iconify/icons-mdi/wechat';
-import { hostname } from '../../config.js'
+import { hostname, site_name, share_poem_title, share_poem_text } from '../../config.js'
 
 import {
   EmailShareButton,
@@ -141,7 +141,7 @@ export default function Share({ url, video, thumb, onClick, text}) {
 }
 */
 
-  text = text ? text : "Check out my HK Vanities poem "
+  text = text ? text : share_poem_text
 
 
   //const urlWeChat = "https://www.addtoany.com/add_to/wechat?linkurl=" + encodeURIComponent(url) + "&amp;linkname=" +  encodeURIComponent(text)
@@ -175,7 +175,6 @@ export default function Share({ url, video, thumb, onClick, text}) {
 		<PinterestShareButton title={text} url={url}><PinterestIcon/> Pinterest</PinterestShareButton>
 	      </li >
 	      <li className={classes.shared1}>
-	       {/*<a href={urlWhatsapp} target="_blank"><WhatsAppIcon/> Whatsapp</a>*/}
 		<WhatsappShareButton title={text} url={url}><WhatsAppIcon/> Whatsapp</WhatsappShareButton>
 	      </li>
 	      <li className={classes.shared0}>
