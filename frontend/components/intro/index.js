@@ -27,7 +27,10 @@ const introVideo =  React.useRef()
 
 return (
         <>
-        <StyledIntro>The Hong Kong Vanities project is a poetic exploration of Hong Kong. Vanity plates are the ultimate nonessential car accessory for owners who want to highlight their status, wealth, humour, desires, beliefs or superstitions. This gave me the idea of creating a new style of poetry – using images of the thousands of vanity plates in Hong Kong, I reached out to poets and encouraged them to mix and match the plates into their own unique poems. The project consists of a huge collection of vanity plate images, a gallery of poems by Hong Kong-based and international artists, and a poetry game enabling people to compose and share their own Hong Kong vanity poems.
+        <StyledIntro>
+<h1>HKVANIT1ES. Hong Kong's poetry in motion.</h1>
+The HKVANIT1ES project is a poetic exploration of Hong Kong.<br/>
+Vanity plates are the ultimate nonessential car accessory for owners who want to highlight their status, wealth, humour, desires, beliefs or superstitions. This gave me the idea of creating a new style of poetry – using images of the thousands of vanity plates in Hong Kong, I reached out to poets and encouraged them to mix and match the plates into their own unique poems. The project consists of a huge collection of vanity plate images, a gallery of poems by Hong Kong-based and international artists, and a poetry game enabling people to compose and share their own Hong Kong vanity poems.
         </StyledIntro>
 
     <IntroVideoContainer>
