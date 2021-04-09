@@ -108,3 +108,5 @@ dist
 
 .well-known/
 .DS_Store
+
+frontend_keep
