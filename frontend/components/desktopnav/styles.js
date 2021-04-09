@@ -3,10 +3,11 @@ import { device } from '../../lib/device'
 
 export const StyledMenu = styled.menu`
   //border: 2px solid pink;
-  line-height: 4rem;
-  margin: .5rem .5rem;
+  line-height: 3rem;
+  margin: 0 .5rem;
 
   @media ${device.laptop} {
+    margin: .5rem .5rem;
     font-size: 3rem;
     line-height: 2rem;
   }
