@@ -71,7 +71,7 @@ export const IntroVideoPlayButton = styled.div`
 
  & img
  {
-  width: 8rem;
+  width: 3.5rem;
  }
 
   @media ${device.laptop} {
