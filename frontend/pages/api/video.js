@@ -13,7 +13,7 @@ const tmpDir = './tmp'
 const outDir = './static/out'
 const poemsDir = './static/poems'
 const platesDir = './static/plates/thumbnails'
-const portrait = './static/img/portrait.jpg'
+const hkvanities_frame = './static/img/hkvanities_video_frame.jpg'
 const plateToPath = (plate) => path.join(platesDir, `${plate}.jpg`)
 
 const zeroPad = (num, places) => String(num).padStart(places, '0')
@@ -115,11 +115,11 @@ const jpgsToMp4 = async (imgs, opts) => {
 
   try {
       ii = zeroPad(i,2)
-      console.log(i , portrait, " ==> ", path.join(outDir, `${ii}.jpg`))
-      fs.copyFile(portrait, path.join(outDir, `${ii}.jpg`))
+      console.log(i , hkvanities_frame , " ==> ", path.join(outDir, `${ii}.jpg`))
+      fs.copyFile(hkvanities_frame, path.join(outDir, `${ii}.jpg`))
       ii = zeroPad(++i,2)
-      console.log(i , portrait, " ==> ", path.join(outDir, `${ii}.jpg`))
-      fs.copyFile(portrait, path.join(outDir, `${ii}.jpg`))
+      console.log(i , hkvanities_frame , " ==> ", path.join(outDir, `${ii}.jpg`))
+      fs.copyFile(hkvanities_frame, path.join(outDir, `${ii}.jpg`))
   } catch (err) {
       throw err;
   }
@@ -190,9 +190,9 @@ const jpgsToMp4 = async (imgs, opts) => {
 	    }
 
       ii = zeroPad(i,2)
-      await fs.unlink(path.join(outDir, `${ii}.jpg`)); // portrait
+      await fs.unlink(path.join(outDir, `${ii}.jpg`)); // hkvanities_frame
       ii = zeroPad(++i,2)
-      await fs.unlink(path.join(outDir, `${ii}.jpg`)); // portrait
+      await fs.unlink(path.join(outDir, `${ii}.jpg`)); // hkvanities_frame
 
       await fs.unlink(outFile)
       //console.log(" delete outfile:", outFile)
