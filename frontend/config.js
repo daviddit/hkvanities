@@ -14,3 +14,5 @@ export const site_description = "The Hong Kong Vanities project is a poetic expl
 
 export const share_poem_title = "HKVANIT1ES. Hong Kong's poetry in motion."
 export const share_poem_text = "Check out my HK Vanities poem"
+
+export const selection_note = "Write your own poem by selecting and rearranging the images. Then share it on your social media profile with #HKVANIT1ES to get it featured on our platforms."

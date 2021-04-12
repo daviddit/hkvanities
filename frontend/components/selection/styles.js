@@ -76,16 +76,16 @@ export const StyledPlaceholderDropZone = styled.div`
 
 export const StyledSelectionNote = styled.div`
   //border: 2px solid pink;
-  margin-top: 1rem;
   font-size: 2rem;
   line-height: initial;
 
-  @media ${device.mobile} {
-   //left: 10rem;
+  @media ${device.mobileM} {
+  font-size: 1.9rem;
   }
 
   @media ${device.laptop} {
-    font-size: 2rem;
+    margin-top: 1rem;
+    font-size: 3rem;
     padding: 0;
   }
 `

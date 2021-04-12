@@ -27,11 +27,10 @@ const introVideo =  React.useRef()
 
 return (
         <>
-        <StyledIntro>
-<h1>HKVANIT1ES. Hong Kong's poetry in motion.</h1>
-The HKVANIT1ES project is a poetic exploration of Hong Kong.<br/>
-Vanity plates are the ultimate nonessential car accessory for owners who want to highlight their status, wealth, humour, desires, beliefs or superstitions. This gave me the idea of creating a new style of poetry – using images of the thousands of vanity plates in Hong Kong, I reached out to poets and encouraged them to mix and match the plates into their own unique poems. The project consists of a huge collection of vanity plate images, a gallery of poems by Hong Kong-based and international artists, and a poetry game enabling people to compose and share their own Hong Kong vanity poems.
-        </StyledIntro>
+        <StyledIntro><h1>HKVANIT1ES | Poetry in Motion</h1>
+Vanity plates are the ultimate nonessential car accessory used by their owners to highlight their status, wealth, humour, desires, beliefs or superstitions – and in Hong Kong they can be seen everywhere. Each plate is like a line of poetry racing through the bustling streets of the city. It is poetry in motion.<br/>
+This project presents an exhaustive image collection of vanity plates, a gallery of poems by Hong Kong and international artists, and a game where you can compose and share your own Hong Kong vanity poems.<br/>
+HKVANIT1ES is a project by <i><a href="https://www.michelesalati.it/" target="_blank">Michele Salati</a></i>, an Italian Creative Director in Advertising and Artist living in Hong Kong.</StyledIntro>
 
     <IntroVideoContainer>
     {!showVideo && (<>

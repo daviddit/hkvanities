@@ -3,14 +3,14 @@ import { device } from '../../lib/device'
 
 export const StyledIntro = styled.p`
   margin: 1rem 0 2rem 0;
-  font-size: 1.7rem;
-  line-height: 1.7rem;
+  font-size: 1.9rem;
+  line-height: 1.9rem;
   //letter-spacing: 1.2px;
   
   & h1
   {
-    font-size: 1.7rem;
-    line-height: 1.7rem;
+    font-size: 1.9rem;
+    line-height: 1.9rem;
     font-weight: normal;
     margin: 0;
   }
@@ -19,7 +19,7 @@ export const StyledIntro = styled.p`
   @media ${device.laptop} {
     font-size: 3rem;
     line-height: 3rem;
-    margin: 7rem 1rem 4rem auto;
+    margin: 4rem 1rem 4rem auto;
     text-align: left;
 
 	& h1
