@@ -4,6 +4,7 @@ import { StyledMenu,  StyledMenu2, StyledLink, StyledA } from './styles'
 import { useRouter } from 'next/router'
 import FacebookIcon from '@material-ui/icons/Facebook';
 import InstagramIcon from '@material-ui/icons/Instagram';
+import { hk_instagram , hk_facebook } from '../../config.js'
 
 export default function DesktopNav() {
 
@@ -31,12 +32,12 @@ return (
   </StyledMenu>
   <StyledMenu2>
     <StyledA>
-    <a href="https://www.instagram.com/hongkongvanities/" title="HKVanities' Instragram" target="_blank">
+    <a href={hk_instagram} title="HKVanities' Instragram" target="_blank">
       <InstagramIcon style={{ fontSize: '3rem'}}/>
     </a>
     </StyledA>
     <StyledA>
-    <a href="https://www.facebook.com/HKVanities/" title="HKVanities' Facebook" target="_blank">
+    <a href={hk_facebook} title="HKVanities' Facebook" target="_blank">
       <FacebookIcon style={{ fontSize: '3rem'}}/>
     </a>
     </StyledA>
