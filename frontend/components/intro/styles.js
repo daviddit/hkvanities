@@ -4,7 +4,7 @@ import { device } from '../../lib/device'
 export const StyledIntro = styled.p`
   margin: 1rem 0 2rem 0;
   font-size: 1.9rem;
-  line-height: 1.9rem;
+  line-height: 2.0rem;
   //letter-spacing: 1.2px;
   
   & h1
@@ -93,6 +93,14 @@ export const IntroVideo = styled.video`
   height: auto;
   //display: ${props => props.showVideo ? "block" : "none" };
   margin: 0;
+
+  @media ${device.laptop} {
+  }
+`
+
+
+export const IntroLink = styled.a`
+border-bottom: 2px solid #393939;
 
   @media ${device.laptop} {
   }
