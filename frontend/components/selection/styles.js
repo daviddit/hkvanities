@@ -76,8 +76,9 @@ export const StyledPlaceholderDropZone = styled.div`
 
 export const StyledSelectionNote = styled.div`
   //border: 2px solid pink;
-  font-size: 2rem;
+  font-size: 1.9rem;
   line-height: initial;
+  color: #393939;
 
   @media ${device.mobileM} {
   font-size: 1.9rem;

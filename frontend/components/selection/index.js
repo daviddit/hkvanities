@@ -7,7 +7,7 @@ import { StyledSelection, StyledSelectionPlates, StyledSelectionImage, StyledDro
 import SelectionControls from '../selection-controls'
 import ImageControls from '../image-controls'
 import { useDrop } from 'react-dnd'
-import { selection_note } from '../../config.js'
+import { selection_note_1st, selection_note_2nd } from '../../config.js'
 //import AddCircleOutlineIcon from '@material-ui/icons/AddCircleOutline';
 const Selection  = ({plates, setPlates, handlePlates, showText, size, handlePlateSize, handleShowText }) => {
 const [ slide, setSlide ]  = useState(true)
@@ -91,7 +91,7 @@ const router = useRouter()
             </React.Fragment>
           ) : (
             <StyledPlaceholderDropZone innerRef={drop} active={canDrop}>
-              <StyledSelectionNote>{selection_note}</StyledSelectionNote>
+              <StyledSelectionNote>{selection_note_1st}<br/>{selection_note_2nd}</StyledSelectionNote>
               <StyledDropZone innerRef={drop} active={canDrop}></StyledDropZone>
             </StyledPlaceholderDropZone>
           )}
