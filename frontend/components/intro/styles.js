@@ -11,7 +11,7 @@ export const StyledIntro = styled.p`
   {
     font-size: 1.9rem;
     line-height: 1.9rem;
-    //font-weight: normal;
+    font-weight: normal;
     margin: 0;
   }
 
