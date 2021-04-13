@@ -97,8 +97,8 @@ export const StyledPlateText = styled.div`
 `
 
 export const StyledAddPlate = styled.div`
-  //width: 100%;
-  //height: 100%;
+  width: 100%;
+  height: 100%;
   //border: 1px solid pink; 
   align-items: center;
   justify-content: center;
@@ -106,8 +106,7 @@ export const StyledAddPlate = styled.div`
   top: 50%;
   right: 50%;
   //opacity: ${props => props.over ? 0.95 : 0 };
-  //display: ${props => props.over ? 'flex' : 'none' };
-  display: flex;
+  display: ${props => props.over ? 'flex' : 'none' };
   //background-color: white;
   position: absolute;
   //z-index: 1505;

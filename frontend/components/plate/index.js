@@ -4,7 +4,7 @@ import { StyledPlate, StyledPlateFigure, StyledPlateImage, StyledPlateImageConta
 import { useDrag } from 'react-dnd'
 
 const Plate = ({ plate, showText, nohover, size, handlePlates }) => {
-const [over,setOver] =  React.useState(false)
+const [ over , setOver ] =  React.useState(false)
 
 let draggable = null
 
@@ -26,14 +26,16 @@ if(nohover)
 }
 
   const handleMouseLeave = () => {
-	  //console.log('leave => over:','false')
+	  //console.log(0,'leave => over:',over)
 	setOver(false)
+	  //console.log(1,'leave => over:',over)
   }
 
 
   const handleMouseEnter = () => {
-	  //console.log('enter => over:','true')
+	 // console.log(0,'enter => over:',over)
 	setOver(true)
+	//  console.log(1,'enter => over:',over)
   }
 
 
@@ -60,14 +62,12 @@ if(nohover)
 */
 
   const handleClick= (t,plate) => {
+	//console.log(0,'click',over)
 	handlePlates(t,plate)
 	//setTimeout(() => setOver(false),500)
-	setOver(false)
-	  //console.log('click',over)
+	//setOver(false)
+	//console.log(1,'click',over)
   }
-
-  const showAddPlate = handlePlates && over
-
 
   return (
      <StyledPlate innerRef={drag} size={size} onContextMenu={(e) => e.preventDefault() } onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
@@ -75,7 +75,7 @@ if(nohover)
 	  <StyledPlateImageContainer over={over}>
 	  { !showText && (<StyledPlateImage draggable={draggable} nohover={nohover} size={size} src={plate.thumbnail} alt={plate.text} /> )  }
 	  { showText && (<StyledPlateText size={size} over={over}>({plate.text.split(" ").join("")})</StyledPlateText>) }
-	  { showAddPlate && (<StyledAddPlate addImgSize={addImgSize} src={plate.thumbnail} alt={plate.text} over={over} showText={showText} onClick={handleClick.bind(this,plate)}><img src="/static/img/add.svg" draggable="false" /></StyledAddPlate>)}
+	  { handleClick && (<StyledAddPlate addImgSize={addImgSize} src={plate.thumbnail} alt={plate.text} over={over} showText={showText}><img src="/static/img/add.svg" draggable="false" onClick={handleClick.bind(this,plate)}/></StyledAddPlate>)}
 	  </StyledPlateImageContainer>
 	  { !showText && (<StyledPlateCaption>{plate.text}</StyledPlateCaption>) }
       </StyledPlateFigure>
