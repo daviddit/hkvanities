@@ -75,7 +75,7 @@ if(nohover)
 	  <StyledPlateImageContainer over={over}>
 	  { !showText && (<StyledPlateImage draggable={draggable} nohover={nohover} size={size} src={plate.thumbnail} alt={plate.text} /> )  }
 	  { showText && (<StyledPlateText size={size} over={over}>({plate.text.split(" ").join("")})</StyledPlateText>) }
-	  { handleClick && (<StyledAddPlate addImgSize={addImgSize} src={plate.thumbnail} alt={plate.text} over={over} showText={showText}><img src="/static/img/add.svg" draggable="false" onClick={handleClick.bind(this,plate)}/></StyledAddPlate>)}
+	  { handlePlates && (<StyledAddPlate addImgSize={addImgSize} src={plate.thumbnail} alt={plate.text} over={over} showText={showText}><img src="/static/img/add.svg" draggable="false" onClick={handleClick.bind(this,plate)}/></StyledAddPlate>)}
 	  </StyledPlateImageContainer>
 	  { !showText && (<StyledPlateCaption>{plate.text}</StyledPlateCaption>) }
       </StyledPlateFigure>
