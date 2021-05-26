@@ -6,7 +6,7 @@ import { StyledFooter } from './styles'
 const Footer = () => {
   return (
     <StyledFooter>
-    HKVANIT1ES 2021&copy;&nbsp;<i>all rights reserved</i>
+    HKVANIT1ES<i>&copy;&nbsp;2021 all rights reserved</i> &mdash; programmed by&nbsp;<a href="https://www.dieres.com/" target="_blank">dieres.com</a>
     </StyledFooter>
   )
 }

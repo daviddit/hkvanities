@@ -17,4 +17,11 @@ export const StyledFooter = styled.footer`
 
   @media ${device.laptop} {
   }
+
+  & a:hover
+  {
+   color: #0088AA;
+   font-weight: 700;
+   text-shadow: 2px 2px 3px lightgrey;
+  }
 `
