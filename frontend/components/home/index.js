@@ -6,10 +6,12 @@ import Button from '../button'
 import Buttons from '../buttons'
 import {HomeStyled} from './styles'
 import WebMetadata from '../webmetadata'
+import Awwwards from '../awwwards'
 
 const Home = props => (
   <HomeStyled>
     <WebMetadata/>
+    <Awwwards/>
     <Intro />
       <HomePlates />
   </HomeStyled>
