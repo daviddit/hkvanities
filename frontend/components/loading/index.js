@@ -1,6 +1,7 @@
 import { StyledLoading, StyledLoadingHeader } from './styles'
 import { useRouter } from 'next/router'
 import Link from 'next/link'
+import Awwwards from '../awwwards'
 //import Shimmer from '../shimmer'
 
 export default function Loading({time}) {
@@ -17,6 +18,7 @@ setTimeout(() => { router.push('/home') }, time)
 }, [])
 
 	return ( <StyledLoading> 
+    			<Awwwards/>
 			<StyledLoadingHeader><Link href="/home">(HKVANIT1ES)</Link></StyledLoadingHeader>
 		</StyledLoading> ) 
 
