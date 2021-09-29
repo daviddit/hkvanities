@@ -71,6 +71,8 @@
   100% { transform: rotate(360deg); }
 }
 
+/*
 #__next > div > div > div:nth-child(1) > section > div > div:nth-child(n+30) > figure > figcaption {
     display: none;
 }
+*/
