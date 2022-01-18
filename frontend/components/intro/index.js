@@ -2,7 +2,6 @@ import Link from 'next/link'
 import styled from 'styled-components'
 import { StyledIntro, IntroVideoContainer, IntroVideo, IntroVideoImg, IntroVideoPlayButton, IntroLink } from './styles'
 import PlayCircleOutlineIcon from '@material-ui/icons/PlayCircleOutline';
-import Awwwards from '../awwwards'
 
 /*
                 onClick={handleMouseEnter}
@@ -28,7 +27,6 @@ const introVideo =  React.useRef()
 
 return (
         <>
-        <Awwwards/>
         <StyledIntro><h1>HKVANIT1ES | Poetry in Motion</h1>
 Vanity plates are the ultimate nonessential car accessory used by their owners to highlight their status, wealth, humour, desires, beliefs or superstitions – and in Hong Kong they can be seen everywhere. Each plate is like a line of poetry racing through the bustling streets of the city. It is poetry in motion.<br/>
 This project presents an exhaustive image collection of vanity plates, a gallery of poems by Hong Kong and international artists, and a game where you can compose and share your own Hong Kong vanity poems.<br/>
