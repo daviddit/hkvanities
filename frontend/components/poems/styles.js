@@ -6,6 +6,7 @@ export const StyledPoems = styled.section`
   flex-wrap: wrap;
   flex-direction: row;
   margin: 2rem 0;
+
 `
 
 export const StyledError = styled.p`
